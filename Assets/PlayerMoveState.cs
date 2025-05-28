@@ -17,6 +17,11 @@ public class PlayerMoveState : PlayerState
     public override void Update()
     {
         base.Update();
+        player.SetVelocity(xInput * player._moveSpeed, rb.velocity.y);
+        if (xInput == 0)
+        {
+            stateMachine.ChangeState(player.idleState);
+        }
     }
 
     public override void Exit()
