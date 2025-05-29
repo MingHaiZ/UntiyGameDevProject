@@ -18,6 +18,9 @@ public class Player : MonoBehaviour
     [SerializeField] private Transform wallCheck;
     [SerializeField] private float wallDistance;
 
+    public int facingDir { get; private set; } = 1;
+    private bool facingRight = true;
+
 
     #region Components
 
@@ -63,6 +66,7 @@ public class Player : MonoBehaviour
     public void SetVelocity(float xVelocity, float yVelocity)
     {
         rb.velocity = new Vector2(xVelocity, yVelocity);
+        FlipController(xVelocity);
     }
 
     public bool IsGroundedDetected() =>
@@ -74,5 +78,23 @@ public class Player : MonoBehaviour
         Gizmos.DrawLine(groundCheck.position,
             new Vector3(groundCheck.position.x, groundCheck.position.y - groundDistance));
         Gizmos.DrawLine(wallCheck.position, new Vector3(wallCheck.position.x + wallDistance, wallCheck.position.y));
+    }
+
+    public void Flip()
+    {
+        facingDir = facingDir * -1;
+        facingRight = !facingRight;
+        transform.Rotate(0, 180 * facingDir, 0);
+    }
+
+    public void FlipController(float x)
+    {
+        if (x > 0 && !facingRight)
+        {
+            Flip();
+        } else if (x < 0 && facingRight)
+        {
+            Flip();
+        }
     }
 }
