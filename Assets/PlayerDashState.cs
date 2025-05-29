@@ -18,11 +18,14 @@ public class PlayerDashState : PlayerState
     public override void Update()
     {
         base.Update();
-        player.SetVelocity(player.dashSpeed * player.facingDir, rb.velocity.y);
+        player.SetVelocity(player.dashSpeed * player.dashDir, 0);
         stateTimer -= Time.deltaTime;
-        if (stateTimer < 0)
+        if (stateTimer < 0 && player.IsGroundedDetected())
         {
             stateMachine.ChangeState(player.idleState);
+        } else if (stateTimer < 0 && !player.IsGroundedDetected())
+        {
+            stateMachine.ChangeState(player.airState);
         }
     }
 
