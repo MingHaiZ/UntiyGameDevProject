@@ -7,9 +7,10 @@ public class PlayerState
 
     protected Rigidbody2D rb;
 
-
     protected float xInput;
     private string animBoolName;
+
+    protected float stateTimer;
 
     public PlayerState(Player _player, PlayerStateMachine _stateMachine, string _animBoolName)
     {

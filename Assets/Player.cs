@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
     public float _moveSpeed;
 
     public float _jumpForce;
+    public float dashSpeed;
+    public float dashDuration;
 
     [Header("Collision Info")]
     [SerializeField] private Transform groundCheck;
@@ -37,6 +39,7 @@ public class Player : MonoBehaviour
     public PlayerMoveState moveState { get; private set; }
     public PlayerJumpState jumpState { get; private set; }
     public PlayerAirState airState { get; private set; }
+    public PlayerDashState dashState { get; private set; }
 
     #endregion
 
@@ -48,6 +51,7 @@ public class Player : MonoBehaviour
         moveState = new PlayerMoveState(this, stateMachine, PlayerStateConstants.PlayerMove);
         jumpState = new PlayerJumpState(this, stateMachine, PlayerStateConstants.PlayerJump);
         airState = new PlayerAirState(this, stateMachine, PlayerStateConstants.PlayerJump);
+        dashState = new PlayerDashState(this, stateMachine, PlayerStateConstants.PlayerDash);
     }
 
     private void Start()
