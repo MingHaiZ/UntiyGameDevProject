@@ -11,4 +11,5 @@ public static class PlayerStateConstants
     public const string PlayerWallJump = "WallJump";
     public const string PlayerWallSlider = "WallSlider";
     public const string PlayerAttack = "Attack";
+    public const string PlayerComboCounter = "ComboCounter";
 }
