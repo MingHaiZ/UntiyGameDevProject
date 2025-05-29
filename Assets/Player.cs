@@ -50,6 +50,7 @@ public class Player : MonoBehaviour
     public PlayerDashState dashState { get; private set; }
     public PlayerWallSliderState wallSliderState { get; private set; }
     public PlayerWallJumpState WallJumpState { get; private set; }
+    public PlayerPrimaryAttackState PrimaryAttackState { get; private set; }
 
     #endregion
 
@@ -64,6 +65,7 @@ public class Player : MonoBehaviour
         dashState = new PlayerDashState(this, stateMachine, PlayerStateConstants.PlayerDash);
         wallSliderState = new PlayerWallSliderState(this, stateMachine, PlayerStateConstants.PlayerWallSlider);
         WallJumpState = new PlayerWallJumpState(this, stateMachine, PlayerStateConstants.PlayerJump);
+        PrimaryAttackState = new PlayerPrimaryAttackState(this, stateMachine, PlayerStateConstants.PlayerAttack);
     }
 
     private void Start()
@@ -92,11 +94,14 @@ public class Player : MonoBehaviour
     public bool IsWallDetected() =>
         Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, wallDistance, whatIsGround);
 
+    public void AnimationTrigger() => stateMachine.currentState.AnimationFinshTrigger();
+
     public void OnDrawGizmos()
     {
         Gizmos.DrawLine(groundCheck.position,
             new Vector3(groundCheck.position.x, groundCheck.position.y - groundDistance));
-        Gizmos.DrawLine(wallCheck.position, new Vector3(wallCheck.position.x + (wallDistance * facingDir), wallCheck.position.y));
+        Gizmos.DrawLine(wallCheck.position,
+            new Vector3(wallCheck.position.x + (wallDistance * facingDir), wallCheck.position.y));
     }
 
     public void Flip()

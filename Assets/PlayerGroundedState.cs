@@ -18,6 +18,11 @@ public class PlayerGroundedState : PlayerState
     {
         base.Update();
 
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            stateMachine.ChangeState(player.PrimaryAttackState);
+        }
+
         if (Input.GetKeyDown(KeyCode.Space) && player.IsGroundedDetected())
         {
             stateMachine.ChangeState(player.jumpState);
