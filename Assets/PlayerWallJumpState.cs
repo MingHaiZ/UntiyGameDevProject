@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerIdleState : PlayerGroundedState
+public class PlayerWallJumpState : PlayerState
 {
-    public PlayerIdleState(Player _player, PlayerStateMachine _stateMachine, string _animBoolName) : base(_player,
+    public PlayerWallJumpState(Player _player, PlayerStateMachine _stateMachine, string _animBoolName) : base(_player,
         _stateMachine, _animBoolName)
     {
     }
@@ -12,19 +12,16 @@ public class PlayerIdleState : PlayerGroundedState
     public override void Enter()
     {
         base.Enter();
+        stateTimer = 0.4f;
+        player.SetVelocity(5 * -player.facingDir, player._jumpForce);
     }
 
     public override void Update()
     {
         base.Update();
-        if (!player.IsGroundedDetected())
+        if (stateTimer < 0)
         {
             stateMachine.ChangeState(player.airState);
-        }
-
-        if (xInput != 0)
-        {
-            stateMachine.ChangeState(player.moveState);
         }
     }
 

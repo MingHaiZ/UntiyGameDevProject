@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public float _moveSpeed;
 
     public float _jumpForce;
+    public float _wallSliderSpeed;
 
     [Header("Dash Info")]
     public float dashSpeed;
@@ -47,6 +48,8 @@ public class Player : MonoBehaviour
     public PlayerJumpState jumpState { get; private set; }
     public PlayerAirState airState { get; private set; }
     public PlayerDashState dashState { get; private set; }
+    public PlayerWallSliderState wallSliderState { get; private set; }
+    public PlayerWallJumpState WallJumpState { get; private set; }
 
     #endregion
 
@@ -59,6 +62,8 @@ public class Player : MonoBehaviour
         jumpState = new PlayerJumpState(this, stateMachine, PlayerStateConstants.PlayerJump);
         airState = new PlayerAirState(this, stateMachine, PlayerStateConstants.PlayerJump);
         dashState = new PlayerDashState(this, stateMachine, PlayerStateConstants.PlayerDash);
+        wallSliderState = new PlayerWallSliderState(this, stateMachine, PlayerStateConstants.PlayerWallSlider);
+        WallJumpState = new PlayerWallJumpState(this, stateMachine, PlayerStateConstants.PlayerJump);
     }
 
     private void Start()
@@ -84,12 +89,14 @@ public class Player : MonoBehaviour
     public bool IsGroundedDetected() =>
         Physics2D.Raycast(groundCheck.position, Vector2.down, groundDistance, whatIsGround);
 
+    public bool IsWallDetected() =>
+        Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, wallDistance, whatIsGround);
 
     public void OnDrawGizmos()
     {
         Gizmos.DrawLine(groundCheck.position,
             new Vector3(groundCheck.position.x, groundCheck.position.y - groundDistance));
-        Gizmos.DrawLine(wallCheck.position, new Vector3(wallCheck.position.x + wallDistance, wallCheck.position.y));
+        Gizmos.DrawLine(wallCheck.position, new Vector3(wallCheck.position.x + (wallDistance * facingDir), wallCheck.position.y));
     }
 
     public void Flip()

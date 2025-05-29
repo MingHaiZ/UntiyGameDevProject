@@ -18,7 +18,12 @@ public class PlayerMoveState : PlayerGroundedState
     {
         base.Update();
         player.SetVelocity(xInput * player._moveSpeed, rb.velocity.y);
-        if (xInput == 0)
+        if (!player.IsGroundedDetected())
+        {
+            stateMachine.ChangeState(player.airState);
+        }
+
+        if (xInput == 0 && stateMachine.currentState == player.moveState)
         {
             stateMachine.ChangeState(player.idleState);
         }
