@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
     [Header("Move Info")]
     public float _moveSpeed;
 
+    public float _jumpForce;
+
     #region Components
 
     public Animator anim { get; private set; }
@@ -21,6 +23,8 @@ public class Player : MonoBehaviour
 
     public PlayerIdleState idleState { get; private set; }
     public PlayerMoveState moveState { get; private set; }
+    public PlayerJumpState jumpState { get; private set; }
+    public PlayerAirState airState { get; private set; }
 
     #endregion
 
@@ -28,8 +32,10 @@ public class Player : MonoBehaviour
     {
         stateMachine = new PlayerStateMachine();
 
-        idleState = new PlayerIdleState(this, stateMachine, PlayerStateConst.PlayerIdle);
-        moveState = new PlayerMoveState(this, stateMachine, PlayerStateConst.PlayerMove);
+        idleState = new PlayerIdleState(this, stateMachine, PlayerStateConstants.PlayerIdle);
+        moveState = new PlayerMoveState(this, stateMachine, PlayerStateConstants.PlayerMove);
+        jumpState = new PlayerJumpState(this, stateMachine, PlayerStateConstants.PlayerJump);
+        airState = new PlayerAirState(this, stateMachine, PlayerStateConstants.PlayerJump);
     }
 
     private void Start()
