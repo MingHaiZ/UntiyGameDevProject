@@ -12,25 +12,30 @@ public class PlayerIdleState : PlayerGroundedState
     public override void Enter()
     {
         base.Enter();
-        player.SetVelocity(0,0);
+        player.ZeroVelocity();
     }
 
     public override void Update()
     {
         base.Update();
+        
+        if (xInput == player.facingDir && player.IsWallDetected())
+        {
+            return;
+        }
+
         if (!player.IsGroundedDetected())
         {
             stateMachine.ChangeState(player.airState);
         }
 
-        if (xInput != 0 && !player.IsWallDetected())
+        if (xInput != 0 && !player.isBusy)
         {
             stateMachine.ChangeState(player.moveState);
         } else
         {
             player.FlipController(xInput);
         }
-        
     }
 
     public override void Exit()

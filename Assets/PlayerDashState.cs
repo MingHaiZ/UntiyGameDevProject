@@ -24,7 +24,6 @@ public class PlayerDashState : PlayerState
         }
 
         player.SetVelocity(player.dashSpeed * player.dashDir, 0);
-        stateTimer -= Time.deltaTime;
         if (stateTimer < 0 && player.IsGroundedDetected())
         {
             stateMachine.ChangeState(player.idleState);
