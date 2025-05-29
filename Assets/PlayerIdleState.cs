@@ -12,6 +12,7 @@ public class PlayerIdleState : PlayerGroundedState
     public override void Enter()
     {
         base.Enter();
+        player.SetVelocity(0,0);
     }
 
     public override void Update()
@@ -22,10 +23,14 @@ public class PlayerIdleState : PlayerGroundedState
             stateMachine.ChangeState(player.airState);
         }
 
-        if (xInput != 0)
+        if (xInput != 0 && !player.IsWallDetected())
         {
             stateMachine.ChangeState(player.moveState);
+        } else
+        {
+            player.FlipController(xInput);
         }
+        
     }
 
     public override void Exit()

@@ -23,6 +23,11 @@ public class PlayerWallJumpState : PlayerState
         {
             stateMachine.ChangeState(player.airState);
         }
+
+        if (player.IsGroundedDetected())
+        {
+            stateMachine.ChangeState(player.idleState);
+        }
     }
 
     public override void Exit()

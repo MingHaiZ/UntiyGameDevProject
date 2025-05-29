@@ -8,7 +8,7 @@ public class PlayerWallSliderState : PlayerState
         _stateMachine, _animBoolName)
     {
     }
-    
+
     public override void Enter()
     {
         base.Enter();
@@ -16,23 +16,28 @@ public class PlayerWallSliderState : PlayerState
 
     public override void Update()
     {
-        Debug.Log(player.IsWallDetected());
         base.Update();
-        Debug.Log(yInput);
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            stateMachine.ChangeState(player.WallJumpState);
+            return;
+        }
+
         if (xInput != 0 && player.facingDir != xInput)
         {
             stateMachine.ChangeState(player.idleState);
         }
 
-        if (yInput<0)
+        if (yInput < 0)
         {
-            player.SetVelocity(0,rb.velocity.y);
+            player.SetVelocity(0, rb.velocity.y);
         } else
         {
-            player.SetVelocity(0,rb.velocity.y*player._wallSliderSpeed);
+            player.SetVelocity(0, rb.velocity.y * player._wallSliderSpeed);
         }
-        
-        if (player.IsGroundedDetected()||!player.IsWallDetected())
+
+        if (player.IsGroundedDetected() || !player.IsWallDetected())
         {
             stateMachine.ChangeState(player.idleState);
         }

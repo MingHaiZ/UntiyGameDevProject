@@ -23,7 +23,7 @@ public class PlayerMoveState : PlayerGroundedState
             stateMachine.ChangeState(player.airState);
         }
 
-        if (xInput == 0 && stateMachine.currentState == player.moveState)
+        if (xInput == 0 || player.IsWallDetected())
         {
             stateMachine.ChangeState(player.idleState);
         }

@@ -121,7 +121,7 @@ public class Player : MonoBehaviour
     {
         dashUseageTimer -= Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.LeftShift) && dashUseageTimer <= 0)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && dashUseageTimer <= 0 && !IsWallDetected())
         {
             dashUseageTimer = dashCooldown;
             dashDir = Input.GetAxisRaw("Horizontal");
