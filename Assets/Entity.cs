@@ -12,8 +12,11 @@ public class Entity : MonoBehaviour
     [SerializeField] protected LayerMask whatIsGround;
     [SerializeField] protected Transform wallCheck;
     [SerializeField] protected float wallDistance;
+    public Transform attackCheck;
+    public float attackCheckRadius;
     public int facingDir { get; private set; } = 1;
     protected bool facingRight = true;
+
 
     #region Components
 
@@ -36,6 +39,11 @@ public class Entity : MonoBehaviour
     {
     }
 
+    public virtual void Damage()
+    {
+        Debug.Log(gameObject.name + " damaged!");
+    }
+
     # region Collsion
 
     public bool IsGroundedDetected() =>
@@ -50,9 +58,11 @@ public class Entity : MonoBehaviour
             new Vector3(groundCheck.position.x, groundCheck.position.y - groundDistance));
         Gizmos.DrawLine(wallCheck.position,
             new Vector3(wallCheck.position.x + (wallDistance * facingDir), wallCheck.position.y));
+        Gizmos.DrawWireSphere(attackCheck.position, attackCheckRadius);
     }
+
     #endregion
-    
+
     # region Flip
 
     public virtual void Flip()

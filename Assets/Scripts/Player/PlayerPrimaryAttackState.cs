@@ -62,4 +62,9 @@ public class PlayerPrimaryAttackState : PlayerState
         comboCounter++;
         lastTimeAttacked = Time.time;
     }
+
+    public void clearXInputCache()
+    {
+        xInput = 0;
+    }
 }
