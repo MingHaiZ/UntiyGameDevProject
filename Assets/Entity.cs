@@ -1,0 +1,89 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Entity : MonoBehaviour
+{
+    [Header("Collision Info")]
+    [SerializeField] protected Transform groundCheck;
+
+    [SerializeField] protected float groundDistance;
+    [SerializeField] protected LayerMask whatIsGround;
+    [SerializeField] protected Transform wallCheck;
+    [SerializeField] protected float wallDistance;
+    public int facingDir { get; private set; } = 1;
+    protected bool facingRight = true;
+
+    #region Components
+
+    public Animator anim { get; private set; }
+    public Rigidbody2D rb { get; private set; }
+
+    #endregion
+
+    protected virtual void Awake()
+    {
+    }
+
+    protected virtual void Start()
+    {
+        anim = GetComponentInChildren<Animator>();
+        rb = GetComponentInChildren<Rigidbody2D>();
+    }
+
+    protected virtual void Update()
+    {
+    }
+
+    # region Collsion
+
+    public bool IsGroundedDetected() =>
+        Physics2D.Raycast(groundCheck.position, Vector2.down, groundDistance, whatIsGround);
+
+    public bool IsWallDetected() =>
+        Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, wallDistance, whatIsGround);
+
+    public void OnDrawGizmos()
+    {
+        Gizmos.DrawLine(groundCheck.position,
+            new Vector3(groundCheck.position.x, groundCheck.position.y - groundDistance));
+        Gizmos.DrawLine(wallCheck.position,
+            new Vector3(wallCheck.position.x + (wallDistance * facingDir), wallCheck.position.y));
+    }
+    #endregion
+    
+    # region Flip
+
+    public virtual void Flip()
+    {
+        facingDir = facingDir * -1;
+        facingRight = !facingRight;
+        transform.Rotate(0, 180 * facingDir, 0);
+    }
+
+    public virtual void FlipController(float x)
+    {
+        if (x > 0 && !facingRight)
+        {
+            Flip();
+        } else if (x < 0 && facingRight)
+        {
+            Flip();
+        }
+    }
+
+    #endregion
+
+    #region Velocity
+
+    public void ZeroVelocity() => rb.velocity = new Vector2(0, 0);
+
+    public void SetVelocity(float xVelocity, float yVelocity)
+    {
+        rb.velocity = new Vector2(xVelocity, yVelocity);
+        FlipController(xVelocity);
+    }
+
+    #endregion
+}
