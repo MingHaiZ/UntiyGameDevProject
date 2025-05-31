@@ -13,4 +13,6 @@ public static class PlayerStateConstants
     public const string PlayerAttack = "Attack";
     public const string PlayerComboCounter = "ComboCounter";
     public const string PlayerCounterAttack = "CounterAttack";
+    public const string PlayerAimSword = "AimSword";
+    public const string PlayerCatchSword = "CatchSword";
 }

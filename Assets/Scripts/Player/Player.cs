@@ -40,6 +40,8 @@ public class Player : Entity
     public PlayerWallJumpState WallJumpState { get; private set; }
     public PlayerPrimaryAttackState PrimaryAttackState { get; private set; }
     public PlayerCounterAttackState CounterAttackState { get; private set; }
+    public PlayerAimSwordState AimSwordState { get; private set; }
+    public PlayerCatchSwordState CatchSwordState { get; private set; }
 
     #endregion
 
@@ -49,7 +51,7 @@ public class Player : Entity
     {
         base.Awake();
         stateMachine = new PlayerStateMachine();
-
+        
         idleState = new PlayerIdleState(this, stateMachine, PlayerStateConstants.PlayerIdle);
         moveState = new PlayerMoveState(this, stateMachine, PlayerStateConstants.PlayerMove);
         jumpState = new PlayerJumpState(this, stateMachine, PlayerStateConstants.PlayerJump);
@@ -57,8 +59,12 @@ public class Player : Entity
         dashState = new PlayerDashState(this, stateMachine, PlayerStateConstants.PlayerDash);
         wallSliderState = new PlayerWallSliderState(this, stateMachine, PlayerStateConstants.PlayerWallSlider);
         WallJumpState = new PlayerWallJumpState(this, stateMachine, PlayerStateConstants.PlayerJump);
+        
         PrimaryAttackState = new PlayerPrimaryAttackState(this, stateMachine, PlayerStateConstants.PlayerAttack);
         CounterAttackState = new PlayerCounterAttackState(this, stateMachine, PlayerStateConstants.PlayerCounterAttack);
+        
+        AimSwordState = new PlayerAimSwordState(this, stateMachine, PlayerStateConstants.PlayerAimSword);
+        CatchSwordState = new PlayerCatchSwordState(this, stateMachine, PlayerStateConstants.PlayerCatchSword);
     }
 
     protected override void Start()
