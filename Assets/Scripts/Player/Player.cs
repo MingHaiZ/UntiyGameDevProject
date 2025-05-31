@@ -43,6 +43,8 @@ public class Player : Entity
 
     #endregion
 
+    public SkillManager Skill = SkillManager.instance;
+
     protected override void Awake()
     {
         base.Awake();
@@ -85,7 +87,7 @@ public class Player : Entity
 
     private void CheckForDashInput()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift) && SkillManager.instance.dash.CanUseSkill() && !IsWallDetected())
+        if (Input.GetKeyDown(KeyCode.LeftShift) && Skill.dash.CanUseSkill() && !IsWallDetected())
         {
             dashDir = Input.GetAxisRaw("Horizontal");
 
