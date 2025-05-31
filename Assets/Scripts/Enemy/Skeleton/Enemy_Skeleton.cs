@@ -40,9 +40,9 @@ public class Enemy_Skeleton : Enemy
         stateMachine.InitializeState(idleState);
     }
 
-    protected override bool CanBeStunned()
+    public override bool CanBeStunned()
     {
-        if (base.canBeStunned)
+        if (base.CanBeStunned())
         {
             stateMachine.ChangeState(stunnedState);
             return true;
