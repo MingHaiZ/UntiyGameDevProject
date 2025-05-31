@@ -4142,9 +4142,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd7be7f41f29fc478723f4e05cbe7bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coolDown: 0
+  coolDown: 1
   clonePrefab: {fileID: 3985630790516676896, guid: efb7843632db6f144bea9583770473eb, type: 3}
   cloneDuration: 1
+  canAttack: 1
 --- !u!1 &1931392442
 GameObject:
   m_ObjectHideFlags: 0
