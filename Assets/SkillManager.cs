@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,14 @@ using UnityEngine;
 public class SkillManager : MonoBehaviour
 {
     public static SkillManager instance;
+
+    public Dash_Skill dash { get; private set; }
+
+
+    private void Start()
+    {
+        dash = GetComponent<Dash_Skill>();
+    }
 
     private void Awake()
     {

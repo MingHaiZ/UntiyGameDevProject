@@ -85,12 +85,10 @@ public class Player : Entity
 
     private void CheckForDashInput()
     {
-        dashUseageTimer -= Time.deltaTime;
-
-        if (Input.GetKeyDown(KeyCode.LeftShift) && dashUseageTimer <= 0 && !IsWallDetected())
+        if (Input.GetKeyDown(KeyCode.LeftShift) && SkillManager.instance.dash.CanUseSkill() && !IsWallDetected())
         {
-            dashUseageTimer = dashCooldown;
             dashDir = Input.GetAxisRaw("Horizontal");
+
             if (dashDir == 0)
             {
                 dashDir = facingDir;
