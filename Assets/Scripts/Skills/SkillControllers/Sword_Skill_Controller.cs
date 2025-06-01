@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -16,13 +14,13 @@ public class Sword_Skill_Controller : MonoBehaviour
     private bool isReturning;
 
 
-    public float bounceSpeed;
-    public bool isBouncing = true;
+    [Header("Bouncing Info")]
+    [SerializeField] private float bounceSpeed;
 
-    [FormerlySerializedAs("anmountOfBounce")]
-    public int amountOfBounce = 4;
+    private bool isBouncing;
+    private int amountOfBounce;
 
-    public List<Transform> enemyTarget;
+    private List<Transform> enemyTarget;
     private int targetIndex;
 
     private void Awake()
@@ -49,7 +47,12 @@ public class Sword_Skill_Controller : MonoBehaviour
                 player.CatchTheSword();
             }
         }
+        
+        BounceLogic();
+    }
 
+    private void BounceLogic()
+    {
         if (isBouncing && enemyTarget.Count > 0)
         {
             transform.position =
@@ -81,6 +84,14 @@ public class Sword_Skill_Controller : MonoBehaviour
         rb.gravityScale = _gravityScale;
 
         anim.SetBool("Rotation", true);
+    }
+
+    public void SetUpBounce(bool _isBouncing, int _amountOfBounces)
+    {
+        isBouncing = _isBouncing;
+        amountOfBounce = _amountOfBounces;
+
+        enemyTarget = new List<Transform>();
     }
 
     public void ReturnSword()
