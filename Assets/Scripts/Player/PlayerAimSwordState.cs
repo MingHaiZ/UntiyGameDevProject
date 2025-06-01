@@ -23,10 +23,20 @@ public class PlayerAimSwordState : PlayerState
         {
             stateMachine.ChangeState(player.idleState);
         }
+
+        Vector2 moustPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        if (player.transform.position.x > moustPosition.x && player.facingDir == 1)
+        {
+            player.Flip();
+        } else if (player.transform.position.x < moustPosition.x && player.facingDir == -1)
+        {
+            player.Flip();
+        }
     }
 
     public override void Exit()
     {
         base.Exit();
+        player.StartCoroutine("BusyFor", 0.3f);
     }
 }

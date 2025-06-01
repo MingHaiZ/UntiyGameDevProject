@@ -2519,6 +2519,7 @@ MonoBehaviour:
   _moveSpeed: 8
   _jumpForce: 12
   _wallSliderSpeed: 0.1
+  _sowrdReturnImpact: 7
   dashSpeed: 25
   dashDuration: 0.2
   dashCooldown: 0.4
