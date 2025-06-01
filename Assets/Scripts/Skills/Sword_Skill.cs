@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Quaternion = UnityEngine.Quaternion;
@@ -19,6 +20,11 @@ public class Sword_Skill : Skill
     [SerializeField] private int amountOfBounce;
 
     [SerializeField] private float bounceGravity;
+
+    [Header("Peirce Info")]
+    [SerializeField] private int pierceAmount;
+
+    [SerializeField] private float pierceGravity;
 
     [Header("Skill Info")]
     [SerializeField] private GameObject swordPrefab;
@@ -43,6 +49,18 @@ public class Sword_Skill : Skill
     {
         base.Start();
         GenerateDots();
+        SetUpGravity();
+    }
+
+    private void SetUpGravity()
+    {
+        if (SwordType == SwordType.Bounce)
+        {
+            swordGravity = bounceGravity;
+        } else if (SwordType == SwordType.Pierce)
+        {
+            swordGravity = pierceGravity;
+        }
     }
 
     protected override void Update()
@@ -69,8 +87,10 @@ public class Sword_Skill : Skill
 
         if (SwordType == SwordType.Bounce)
         {
-            swordGravity = bounceGravity;
             newSwordScript.SetUpBounce(true, amountOfBounce);
+        } else if (SwordType == SwordType.Pierce)
+        {
+            newSwordScript.SetUpPierce(pierceAmount);
         }
 
 
