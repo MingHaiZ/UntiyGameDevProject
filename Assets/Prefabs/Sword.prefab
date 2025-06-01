@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1649423317667649197}
   - component: {fileID: 7455516675830367113}
   - component: {fileID: 7951825851712346851}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,8 +71,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1764997017
-  m_SortingLayer: 3
+  m_SortingLayerID: -2084272873
+  m_SortingLayer: 2
   m_SortingOrder: -1
   m_Sprite: {fileID: -2004053239, guid: f6b296ee51c42564abe9c05f1c502ecd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 8221648419481116766}
   - component: {fileID: 4487862190217248912}
   - component: {fileID: 6602656821897400927}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -215,3 +215,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aac96f71f9c935f49b9fc60942f1c074, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  returnSpeed: 12
+  bounceSpeed: 12
+  isBouncing: 1
+  amountOfBounce: 4
+  enemyTarget: []
