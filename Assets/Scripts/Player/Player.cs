@@ -46,12 +46,13 @@ public class Player : Entity
     #endregion
 
     public SkillManager Skill = SkillManager.instance;
+    public GameObject sword { get; private set; }
 
     protected override void Awake()
     {
         base.Awake();
         stateMachine = new PlayerStateMachine();
-        
+
         idleState = new PlayerIdleState(this, stateMachine, PlayerStateConstants.PlayerIdle);
         moveState = new PlayerMoveState(this, stateMachine, PlayerStateConstants.PlayerMove);
         jumpState = new PlayerJumpState(this, stateMachine, PlayerStateConstants.PlayerJump);
@@ -59,10 +60,10 @@ public class Player : Entity
         dashState = new PlayerDashState(this, stateMachine, PlayerStateConstants.PlayerDash);
         wallSliderState = new PlayerWallSliderState(this, stateMachine, PlayerStateConstants.PlayerWallSlider);
         WallJumpState = new PlayerWallJumpState(this, stateMachine, PlayerStateConstants.PlayerJump);
-        
+
         PrimaryAttackState = new PlayerPrimaryAttackState(this, stateMachine, PlayerStateConstants.PlayerAttack);
         CounterAttackState = new PlayerCounterAttackState(this, stateMachine, PlayerStateConstants.PlayerCounterAttack);
-        
+
         AimSwordState = new PlayerAimSwordState(this, stateMachine, PlayerStateConstants.PlayerAimSword);
         CatchSwordState = new PlayerCatchSwordState(this, stateMachine, PlayerStateConstants.PlayerCatchSword);
     }
@@ -78,6 +79,16 @@ public class Player : Entity
         base.Update();
         stateMachine.currentState.Update();
         CheckForDashInput();
+    }
+
+    public void AssignNewSword(GameObject _newSword)
+    {
+        sword = _newSword;
+    }
+
+    public void ClearTheSword()
+    {
+        Destroy(sword);
     }
 
     public IEnumerator BusyFor(float _seconds)
