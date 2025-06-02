@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class PlayerDashState : PlayerState
 {
     public PlayerDashState(Player _player, PlayerStateMachine _stateMachine, string _animBoolName) : base(_player,
@@ -9,7 +11,7 @@ public class PlayerDashState : PlayerState
     {
         base.Enter();
 
-        player.Skill.clone.CreateClone(player.transform);
+        player.Skill.clone.CreateClone(player.transform, Vector3.zero);
 
         stateTimer = player.dashDuration;
     }
