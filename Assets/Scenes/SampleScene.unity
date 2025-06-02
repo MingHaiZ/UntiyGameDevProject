@@ -3855,6 +3855,10 @@ MonoBehaviour:
   bounceGravity: 2
   pierceAmount: 2
   pierceGravity: 1
+  maxTravelDistance: 7
+  spinDuration: 2
+  spinGravity: 1
+  hitCoolDown: 0.1
   swordPrefab: {fileID: 6592142215300235705, guid: 6e25450bb1ccb804fbc3d4d6a8929222, type: 3}
   launchForce: {x: 15, y: 20}
   swordGravity: 4
