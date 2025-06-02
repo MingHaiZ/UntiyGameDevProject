@@ -39,7 +39,6 @@ public class Entity : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
         rb = GetComponentInChildren<Rigidbody2D>();
         fx = GetComponent<EntityFX>();
-        print(fx);
     }
 
     protected virtual void Update()

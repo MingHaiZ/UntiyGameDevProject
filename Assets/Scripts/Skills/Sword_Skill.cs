@@ -20,6 +20,7 @@ public class Sword_Skill : Skill
     [SerializeField] private int amountOfBounce;
 
     [SerializeField] private float bounceGravity;
+    [SerializeField] private float bounceSpeed;
 
     [Header("Peirce Info")]
     [SerializeField] private int pierceAmount;
@@ -42,6 +43,8 @@ public class Sword_Skill : Skill
     [SerializeField] private float swordGravity;
 
     private Vector2 finalDir;
+    [SerializeField] private float freezeTimeDuration;
+    [SerializeField] private float returnSpeed;
 
     [Header("Aim dots")]
     [SerializeField] private int numberOfDots;
@@ -97,17 +100,17 @@ public class Sword_Skill : Skill
 
         if (SwordType == SwordType.Bounce)
         {
-            newSwordScript.SetUpBounce(true, amountOfBounce);
+            newSwordScript.SetUpBounce(true, amountOfBounce, bounceSpeed);
         } else if (SwordType == SwordType.Pierce)
         {
             newSwordScript.SetUpPierce(pierceAmount);
         } else if (SwordType == SwordType.Spin)
         {
-            newSwordScript.SetUpSpin(true, maxTravelDistance, spinDuration, spinGravity,hitCoolDown);
+            newSwordScript.SetUpSpin(true, maxTravelDistance, spinDuration, spinGravity, hitCoolDown);
         }
 
 
-        newSwordScript.SetUpSword(finalDir, swordGravity, player);
+        newSwordScript.SetUpSword(finalDir, swordGravity, player, freezeTimeDuration, returnSpeed);
 
         player.AssignNewSword(sword);
         player.Skill.sword.DotsActive(false);

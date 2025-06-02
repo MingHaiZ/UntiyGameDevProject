@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Enemy : Entity
@@ -15,6 +16,7 @@ public class Enemy : Entity
     public float moveSpeed;
 
     public float idleTime;
+    readonly float defaultMoveSpeed = 1.5f;
 
     [Header("Attack Info")]
     public float attackDistance;
@@ -29,6 +31,8 @@ public class Enemy : Entity
     {
         base.Awake();
         stateMachine = new EnemyStateMachine();
+
+        moveSpeed = defaultMoveSpeed;
     }
 
     protected override void Update()
@@ -36,6 +40,28 @@ public class Enemy : Entity
         base.Update();
         stateMachine.currentState.Update();
     }
+
+    public virtual void FreezeTime(bool _timerFrozen)
+    {
+        if (_timerFrozen)
+        {
+            moveSpeed = 0;
+            anim.speed = 0;
+        } else
+        {
+            moveSpeed = defaultMoveSpeed;
+            anim.speed = 1;
+        }
+    }
+
+    protected virtual IEnumerator FreezeTimerFor(float _seconds)
+    {
+        FreezeTime(true);
+        yield return new WaitForSeconds(_seconds);
+        FreezeTime(false);
+    }
+
+    #region Counter Attack Window
 
     public virtual void OpenCounterAttackWindow()
     {
@@ -49,6 +75,8 @@ public class Enemy : Entity
         counterImage.SetActive(false);
     }
 
+    #endregion
+
     public virtual bool CanBeStunned()
     {
         if (canBeStunned)
@@ -59,6 +87,7 @@ public class Enemy : Entity
 
         return false;
     }
+
 
     public virtual void AnimationFinshTrigger() => stateMachine.currentState.AnimationFinshTrigger();
 
