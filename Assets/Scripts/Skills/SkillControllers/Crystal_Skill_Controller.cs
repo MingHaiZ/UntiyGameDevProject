@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using UnityEngine;
 
 public class Crystal_Skill_Controller : MonoBehaviour
@@ -13,18 +14,21 @@ public class Crystal_Skill_Controller : MonoBehaviour
     private Animator anim;
     private bool canGrow;
     private float growSpeed = 5;
+    private Transform cloestEnemy;
 
     private void Start()
     {
         anim = GetComponent<Animator>();
     }
 
-    public void SetupCrystal(float _crystalDuration, bool _canExplode, bool _canMove, float _moveSpeed)
+    public void SetupCrystal(float _crystalDuration, bool _canExplode, bool _canMove, float _moveSpeed,
+        Transform _cloestEnemy)
     {
         crystalExistTimer = _crystalDuration;
         canExplode = _canExplode;
         canMoveToEnemy = _canMove;
         moveSpeed = _moveSpeed;
+        cloestEnemy = _cloestEnemy;
     }
 
     private void Update()
@@ -33,6 +37,17 @@ public class Crystal_Skill_Controller : MonoBehaviour
         if (crystalExistTimer < 0)
         {
             FinishCrystal();
+        }
+
+        if (canMoveToEnemy)
+        {
+            transform.position =
+                Vector2.MoveTowards(transform.position, cloestEnemy.position, moveSpeed * Time.deltaTime);
+            if (Vector2.Distance(transform.position, cloestEnemy.position) < 1)
+            {
+                FinishCrystal();
+                canMoveToEnemy = false;
+            }
         }
 
         if (canGrow)

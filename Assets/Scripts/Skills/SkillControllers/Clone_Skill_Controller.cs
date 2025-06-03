@@ -8,7 +8,7 @@ public class Clone_Skill_Controller : MonoBehaviour
     private float cloneTimer;
     [SerializeField] private Transform attackCheck;
     [SerializeField] private float attackCheckRadius = 0.8f;
-    private Transform closestEnemy;
+    private Transform cloestEnemy;
 
     private void Awake()
     {
@@ -29,7 +29,7 @@ public class Clone_Skill_Controller : MonoBehaviour
         }
     }
 
-    public void SetupClone(Transform _newTransform, float cloneDuration, bool _canAttack, Vector3 _offset)
+    public void SetupClone(Transform _newTransform, float cloneDuration, bool _canAttack, Vector3 _offset,Transform _cloestEnemy)
     {
         if (_canAttack)
         {
@@ -39,7 +39,7 @@ public class Clone_Skill_Controller : MonoBehaviour
         transform.position = _newTransform.position + _offset;
         cloneTimer = cloneDuration;
 
-
+        cloestEnemy = _cloestEnemy;
         FaceClosestTarget();
     }
 
@@ -63,24 +63,10 @@ public class Clone_Skill_Controller : MonoBehaviour
 
     private void FaceClosestTarget()
     {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 25);
-        float closestDistance = Mathf.Infinity;
-        foreach (var hit in colliders)
+        
+        if (cloestEnemy != null)
         {
-            if (hit.GetComponent<Enemy>() != null)
-            {
-                float distance = Vector2.Distance(transform.position, hit.transform.position);
-                if (distance < closestDistance)
-                {
-                    closestDistance = distance;
-                    closestEnemy = hit.transform;
-                }
-            }
-        }
-
-        if (closestEnemy != null)
-        {
-            if (transform.position.x > closestEnemy.position.x)
+            if (transform.position.x > cloestEnemy.position.x)
             {
                 transform.Rotate(0, 180, 0);
             }
