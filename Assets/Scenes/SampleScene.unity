@@ -2335,6 +2335,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Skeleton (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6824437023838449183, guid: 35108bd2748354b4983fe4ca5228ce01, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7054070312001095456, guid: 35108bd2748354b4983fe4ca5228ce01, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.6303734
@@ -3716,6 +3720,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Skeleton (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6824437023838449183, guid: 35108bd2748354b4983fe4ca5228ce01, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7054070312001095456, guid: 35108bd2748354b4983fe4ca5228ce01, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.915011
@@ -3841,6 +3849,11 @@ MonoBehaviour:
   clonePrefab: {fileID: 3985630790516676896, guid: efb7843632db6f144bea9583770473eb, type: 3}
   cloneDuration: 1
   canAttack: 1
+  createCloneOnDashStart: 1
+  createCloneOnDashOver: 0
+  canCreateCloneOnCounterAttack: 1
+  canDuplicateClone: 1
+  chanceToDuplicate: 35
 --- !u!114 &1890083893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3981,6 +3994,7 @@ MonoBehaviour:
   coolDown: 0
   crystalDuration: 1.5
   crystalPrefab: {fileID: 2415078433825238668, guid: 3194a0bd980a3384cb230c255ee3ae53, type: 3}
+  cloneInsteadOfCrystal: 0
   canExplode: 1
   canMoveToEnemy: 1
   moveSpeed: 5
