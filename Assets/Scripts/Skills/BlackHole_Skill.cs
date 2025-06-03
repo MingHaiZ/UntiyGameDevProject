@@ -38,7 +38,8 @@ public class BlackHole_Skill : Skill
         base.useSkill();
         GameObject newBlackhole = Instantiate(blackholePrefab, player.transform.position, Quaternion.identity);
         currentBlackHole = newBlackhole.GetComponent<Blackhole_Skill_Controller>();
-        currentBlackHole.SetupBlackhole(maxSize, growSpeed, shrinkSpeed, amountOfAttacks, cloneAttackCoolDown,blackholeDuration);
+        currentBlackHole.SetupBlackhole(maxSize, growSpeed, shrinkSpeed, amountOfAttacks, cloneAttackCoolDown,
+            blackholeDuration);
     }
 
     public bool SkillCompleted()
@@ -55,5 +56,10 @@ public class BlackHole_Skill : Skill
         }
 
         return false;
+    }
+
+    public float GetBlackholeRadius()
+    {
+        return maxSize / 2;
     }
 }

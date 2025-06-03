@@ -2337,7 +2337,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6824437023838449183, guid: 35108bd2748354b4983fe4ca5228ce01, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7054070312001095456, guid: 35108bd2748354b4983fe4ca5228ce01, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3722,7 +3722,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6824437023838449183, guid: 35108bd2748354b4983fe4ca5228ce01, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7054070312001095456, guid: 35108bd2748354b4983fe4ca5228ce01, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3850,10 +3850,11 @@ MonoBehaviour:
   cloneDuration: 1
   canAttack: 1
   createCloneOnDashStart: 1
-  createCloneOnDashOver: 0
+  createCloneOnDashOver: 1
   canCreateCloneOnCounterAttack: 1
   canDuplicateClone: 1
   chanceToDuplicate: 35
+  crystalInsteadOfClone: 1
 --- !u!114 &1890083893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3903,7 +3904,7 @@ MonoBehaviour:
   maxSize: 15
   growSpeed: 3
   shrinkSpeed: 6
-  amountOfAttacks: 5
+  amountOfAttacks: 15
   cloneAttackCoolDown: 0.35
   blackholeDuration: 4
 --- !u!212 &1890083895
