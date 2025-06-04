@@ -29,4 +29,9 @@ public class Stat
     {
         modifiers.Remove(_modifier);
     }
+
+    public void SetDefaultValue(int _value)
+    {
+        baseValue = _value;
+    }
 }

@@ -1,13 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class CharacterStats : MonoBehaviour
 {
+    [Header("Major stats")]
+    // 每点力量增加1点攻击伤害和1%的暴击伤害
     public Stat strength;
-    public Stat damage;
+
+    // 每点敏捷增加1%闪避概率和1%暴击概率
+    public Stat agility;
+
+    // 每点智力增加一点魔法伤害和3点魔法抗性
+    public Stat intelligence;
+
+    // 每点活力属性增加3-5点生命值
+    public Stat vitality;
+
+    [Header("Defencive stats")]
     public Stat maxHealth;
+
+    public Stat armor;
+    public Stat evasion;
+
+    [Header("Offensive stats")]
+    public Stat damage;
+
+    public Stat critChance;
+    public Stat critPower;
 
 
     private int currentHealth;
@@ -15,22 +33,73 @@ public class CharacterStats : MonoBehaviour
     protected virtual void Start()
     {
         currentHealth = maxHealth.GetValue();
+        critPower.SetDefaultValue(150);
     }
 
     public virtual void DoDamage(CharacterStats _targetStats)
     {
+        if (TargetCanAvoidAttack(_targetStats))
+        {
+            return;
+        }
+
+
         int totalDamage = damage.GetValue() + strength.GetValue();
+
+
+        if (CanCrit())
+        {
+            totalDamage = CalculateCriticalDamage(totalDamage);
+        }
+
+        totalDamage = CheckTargetArmor(_targetStats, totalDamage);
         _targetStats.TakeDamage(totalDamage);
+    }
+
+    private int CheckTargetArmor(CharacterStats _targetStats, int totalDamage)
+    {
+        totalDamage -= _targetStats.armor.GetValue();
+        totalDamage = Mathf.Clamp(totalDamage, 0, int.MaxValue);
+        return totalDamage;
+    }
+
+    private bool TargetCanAvoidAttack(CharacterStats _targetStats)
+    {
+        int totalEvasion = _targetStats.evasion.GetValue() + _targetStats.agility.GetValue();
+        if (Random.Range(0, 100) < totalEvasion)
+        {
+            return true;
+        }
+
+        return false;
     }
 
     public virtual void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        
+
         if (currentHealth <= 0)
         {
             Die();
         }
+    }
+
+    private bool CanCrit()
+    {
+        int totalCritChance = critChance.GetValue() + agility.GetValue();
+        if (Random.Range(0, 100) < totalCritChance)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    private int CalculateCriticalDamage(int _damage)
+    {
+        float totalCritPower = (critPower.GetValue() + strength.GetValue()) / 100f;
+        float critDamage = _damage * totalCritPower;
+        return Mathf.RoundToInt(critDamage);
     }
 
     protected virtual void Die()
