@@ -21,6 +21,7 @@ public class Entity : MonoBehaviour
     public int facingDir { get; private set; } = 1;
     protected bool facingRight = true;
 
+    public System.Action onFlipped;
 
     #region Components
 
@@ -92,6 +93,11 @@ public class Entity : MonoBehaviour
         facingDir = facingDir * -1;
         facingRight = !facingRight;
         transform.Rotate(0, 180 * facingDir, 0);
+
+        if (onFlipped != null)
+        {
+            onFlipped();
+        }
     }
 
     public virtual void FlipController(float x)
@@ -145,6 +151,5 @@ public class Entity : MonoBehaviour
 
     public virtual void Die()
     {
-        
     }
 }
