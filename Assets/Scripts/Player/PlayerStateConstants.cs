@@ -15,4 +15,5 @@ public static class PlayerStateConstants
     public const string PlayerCounterAttack = "CounterAttack";
     public const string PlayerAimSword = "AimSword";
     public const string PlayerCatchSword = "CatchSword";
+    public const string PlayerDead = "Die";
 }

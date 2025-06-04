@@ -42,6 +42,7 @@ public class Player : Entity
     public PlayerAimSwordState AimSwordState { get; private set; }
     public PlayerCatchSwordState CatchSwordState { get; private set; }
     public PlayerBlackholeState BlackholeState { get; private set; }
+    public PlayerDeadState deadState { get; private set; }
 
     #endregion
 
@@ -67,6 +68,7 @@ public class Player : Entity
         AimSwordState = new PlayerAimSwordState(this, stateMachine, PlayerStateConstants.PlayerAimSword);
         CatchSwordState = new PlayerCatchSwordState(this, stateMachine, PlayerStateConstants.PlayerCatchSword);
         BlackholeState = new PlayerBlackholeState(this, stateMachine, PlayerStateConstants.PlayerJump);
+        deadState = new PlayerDeadState(this, stateMachine, PlayerStateConstants.PlayerDead);
     }
 
     protected override void Start()
@@ -81,7 +83,7 @@ public class Player : Entity
         stateMachine.currentState.Update();
         CheckForDashInput();
 
-        if (Input.GetKeyDown(KeyCode.F)&&stateMachine.currentState!=BlackholeState)
+        if (Input.GetKeyDown(KeyCode.F) && stateMachine.currentState != BlackholeState)
         {
             Skill.crystal.CanUseSkill();
         }
@@ -97,9 +99,8 @@ public class Player : Entity
         stateMachine.ChangeState(CatchSwordState);
         Destroy(sword);
     }
-    
-    
-    
+
+
     public IEnumerator BusyFor(float _seconds)
     {
         isBusy = true;
@@ -124,5 +125,11 @@ public class Player : Entity
 
             stateMachine.ChangeState(dashState);
         }
+    }
+
+    public override void Die()
+    {
+        base.Die();
+        stateMachine.ChangeState(deadState);
     }
 }
