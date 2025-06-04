@@ -2139,6 +2139,7 @@ GameObject:
   - component: {fileID: 1380262141}
   - component: {fileID: 1380262140}
   - component: {fileID: 1380262142}
+  - component: {fileID: 1380262143}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -2278,6 +2279,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitMat: {fileID: 2100000, guid: 66d4621599abf104e88cd09d2009fbc0, type: 2}
   flashDuration: 0.2
+--- !u!114 &1380262143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1380262137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af328c954f3ce394cadb948af3c627af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  strength:
+    baseValue: 5
+    modifiers: 
+  damage:
+    baseValue: 7
+    modifiers: 03000000
+  maxHealth:
+    baseValue: 50
+    modifiers: 
 --- !u!1 &1412563339
 GameObject:
   m_ObjectHideFlags: 0
@@ -2337,7 +2359,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6824437023838449183, guid: 35108bd2748354b4983fe4ca5228ce01, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7054070312001095456, guid: 35108bd2748354b4983fe4ca5228ce01, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3722,7 +3744,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6824437023838449183, guid: 35108bd2748354b4983fe4ca5228ce01, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7054070312001095456, guid: 35108bd2748354b4983fe4ca5228ce01, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4237,6 +4259,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6401674408598219534, guid: 35108bd2748354b4983fe4ca5228ce01, type: 3}
+      propertyPath: damage.baseValue
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -6401674408598219534, guid: 35108bd2748354b4983fe4ca5228ce01, type: 3}
+      propertyPath: maxHealth.baseValue
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6824437023838449183, guid: 35108bd2748354b4983fe4ca5228ce01, type: 3}
       propertyPath: m_Name
       value: Enemy_Skeleton
