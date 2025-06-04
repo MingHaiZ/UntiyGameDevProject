@@ -1,4 +1,7 @@
+using System;
 using UnityEngine;
+using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 public class CharacterStats : MonoBehaviour
 {
@@ -34,9 +37,22 @@ public class CharacterStats : MonoBehaviour
     public Stat critChance;
     public Stat critPower;
 
+    // 造成持续伤害
     public bool isIgnited;
-    public bool isChild;
+
+    // 减少20%护甲
+    public bool isChill;
+
+    // 减少20%命中率
     public bool isShocked;
+
+    private float ignitedTimer;
+    private float chilledTimer;
+    private float shockedTimer;
+
+    private float ingniedDamageCooldown = 0.3f;
+    private float ignitedDamageTimer;
+    private int igniteDamage;
 
     private int currentHealth;
 
@@ -44,6 +60,68 @@ public class CharacterStats : MonoBehaviour
     {
         currentHealth = maxHealth.GetValue();
         critPower.SetDefaultValue(150);
+    }
+
+    protected void Update()
+    {
+        CheckAilment();
+    }
+
+    private void CheckAilment()
+    {
+        CheckIgnite();
+        CheckChill();
+        CheckShock();
+    }
+
+    private void CheckShock()
+    {
+        if (isShocked)
+        {
+            shockedTimer -= Time.deltaTime;
+            if (shockedTimer < 0)
+            {
+                isShocked = false;
+            }
+        }
+    }
+
+    private void CheckChill()
+    {
+        if (isChill)
+        {
+            chilledTimer -= Time.deltaTime;
+            if (chilledTimer < 0)
+            {
+                isChill = false;
+            }
+        }
+    }
+
+    private void CheckIgnite()
+    {
+        if (isIgnited)
+        {
+            ignitedTimer -= Time.deltaTime;
+            ignitedDamageTimer -= Time.deltaTime;
+
+            if (ignitedTimer < 0)
+            {
+                isIgnited = false;
+            }
+
+            if (ignitedDamageTimer < 0)
+            {
+                print("ignited damage : " + igniteDamage);
+                currentHealth -= igniteDamage;
+                if (currentHealth <= 0)
+                {
+                    Die();
+                }
+
+                ignitedDamageTimer = ingniedDamageCooldown;
+            }
+        }
     }
 
     public virtual void DoDamage(CharacterStats _targetStats)
@@ -69,7 +147,15 @@ public class CharacterStats : MonoBehaviour
 
     private int CheckTargetArmor(CharacterStats _targetStats, int totalDamage)
     {
-        totalDamage -= _targetStats.armor.GetValue();
+        if (_targetStats.isChill)
+        {
+            totalDamage -= Mathf.RoundToInt(_targetStats.armor.GetValue() * 0.8f);
+        } else
+        {
+            totalDamage -= _targetStats.armor.GetValue();
+        }
+
+
         totalDamage = Mathf.Clamp(totalDamage, 0, int.MaxValue);
         return totalDamage;
     }
@@ -77,6 +163,11 @@ public class CharacterStats : MonoBehaviour
     private bool TargetCanAvoidAttack(CharacterStats _targetStats)
     {
         int totalEvasion = _targetStats.evasion.GetValue() + _targetStats.agility.GetValue();
+        if (isShocked)
+        {
+            totalEvasion += 20;
+        }
+
         if (Random.Range(0, 100) < totalEvasion)
         {
             return true;
@@ -131,6 +222,11 @@ public class CharacterStats : MonoBehaviour
         }
 
         _targetStats.ApplyAilments(canApplyIgnite, canApplyChill, canApplyShock);
+
+        if (canApplyIgnite)
+        {
+            _targetStats.SetupIgniteDamage(Mathf.RoundToInt(_fireDamage * 0.2f));
+        }
     }
 
     private static int CheckTargetResistance(CharacterStats _targetStats, int totalMagicDamage)
@@ -142,15 +238,31 @@ public class CharacterStats : MonoBehaviour
 
     public void ApplyAilments(bool _ignite, bool _chill, bool _shock)
     {
-        if (isIgnited || isChild || isShocked)
+        if (isIgnited || isChill || isShocked)
         {
             return;
         }
 
-        isIgnited = _ignite;
-        isChild = _chill;
-        isShocked = _shock;
+        if (_ignite)
+        {
+            isIgnited = _ignite;
+            ignitedTimer = 4;
+        }
+
+        if (_chill)
+        {
+            isChill = _chill;
+            chilledTimer = 4;
+        }
+
+        if (_shock)
+        {
+            isShocked = _shock;
+            shockedTimer = 4;
+        }
     }
+
+    public void SetupIgniteDamage(int _damage) => igniteDamage = _damage;
 
     public virtual void TakeDamage(int damage)
     {
