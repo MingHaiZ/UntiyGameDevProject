@@ -2312,6 +2312,18 @@ MonoBehaviour:
   evasion:
     baseValue: 0
     modifiers: 
+  magicResistance:
+    baseValue: 0
+    modifiers: 
+  fireDamage:
+    baseValue: 2
+    modifiers: 
+  iceDamage:
+    baseValue: 3
+    modifiers: 
+  lightingDamage:
+    baseValue: 5
+    modifiers: 
   damage:
     baseValue: 7
     modifiers: 03000000
@@ -2321,6 +2333,9 @@ MonoBehaviour:
   critPower:
     baseValue: 0
     modifiers: 
+  isIgnited: 0
+  isChild: 0
+  isShocked: 0
 --- !u!1 &1412563339
 GameObject:
   m_ObjectHideFlags: 0
@@ -4286,7 +4301,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6401674408598219534, guid: 35108bd2748354b4983fe4ca5228ce01, type: 3}
       propertyPath: maxHealth.baseValue
-      value: 1
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 6824437023838449183, guid: 35108bd2748354b4983fe4ca5228ce01, type: 3}
       propertyPath: m_Name
