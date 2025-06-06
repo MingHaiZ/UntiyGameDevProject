@@ -12,10 +12,12 @@ public class Crystal_Skill_Controller : MonoBehaviour
     private float growSpeed = 5;
     private Transform cloestEnemy;
     [SerializeField] private LayerMask whatIsEnemy;
+    private Player player;
 
     private void Start()
     {
         anim = GetComponent<Animator>();
+        player = PlayerManager.instance.player;
     }
 
     public void SetupCrystal(float _crystalDuration, bool _canExplode, bool _canMove, float _moveSpeed,
@@ -85,7 +87,7 @@ public class Crystal_Skill_Controller : MonoBehaviour
         {
             if (hit.GetComponent<Enemy>() != null)
             {
-                hit.GetComponent<Enemy>().DamageEffect();
+                player.stats.DoMagicalDamage(hit.GetComponent<CharacterStats>());
             }
         }
     }

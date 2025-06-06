@@ -53,7 +53,7 @@ public class PlayerBlackholeState : PlayerState
     {
         base.Exit();
         rb.gravityScale = defaultGravity;
-        player.MakeTransprent(false);
+        player.fx.MakeTransprent(false);
     }
 
     public override void AnimationFinshTrigger()
