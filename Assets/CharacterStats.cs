@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.TextCore.Text;
 using Random = UnityEngine.Random;
 
 public class CharacterStats : MonoBehaviour
@@ -56,6 +57,8 @@ public class CharacterStats : MonoBehaviour
     private float ingniedDamageCooldown = 0.3f;
     private float ignitedDamageTimer;
     private int igniteDamage;
+    [SerializeField] private GameObject shockStrikePrefab;
+    private int shockDamage;
 
     public int currentHealth;
 
@@ -232,6 +235,11 @@ public class CharacterStats : MonoBehaviour
         {
             _targetStats.SetupIgniteDamage(Mathf.RoundToInt(_fireDamage * 0.2f));
         }
+
+        if (canApplyShock)
+        {
+            _targetStats.SetupShockStrikeDamage(Mathf.RoundToInt(_lightingDamage * .1f));
+        }
     }
 
     private static int CheckTargetResistance(CharacterStats _targetStats, int totalMagicDamage)
@@ -243,36 +251,96 @@ public class CharacterStats : MonoBehaviour
 
     public void ApplyAilments(bool _ignite, bool _chill, bool _shock)
     {
-        if (isIgnited || isChill || isShocked)
-        {
-            return;
-        }
+        bool canApplyIgnite = !isIgnited && !isChill && isShocked;
+        bool canApplyChill = !isIgnited && !isChill && isShocked;
+        bool canApplyShock = !isIgnited && !isChill;
 
-        if (_ignite)
+        if (_ignite && canApplyIgnite)
         {
             isIgnited = _ignite;
             ignitedTimer = ailmentsDuration;
             fx.IgniteFxFor(ailmentsDuration);
         }
 
-        if (_chill)
+        if (_chill && canApplyChill)
         {
             isChill = _chill;
             chilledTimer = ailmentsDuration;
             float slowPercentage = .2f;
-            GetComponent<Entity>().SlowEntityBy(slowPercentage,ailmentsDuration);
+            GetComponent<Entity>().SlowEntityBy(slowPercentage, ailmentsDuration);
             fx.ChillFxFor(ailmentsDuration);
         }
 
-        if (_shock)
+        if (_shock && canApplyShock)
         {
-            isShocked = _shock;
-            shockedTimer = ailmentsDuration;
-            fx.ShockFxFor(ailmentsDuration);
+            if (!isShocked)
+            {
+                ApplyShock(_shock);
+            } else
+            {
+                if (GetComponent<Player>() != null)
+                {
+                    return;
+                }
+
+                HitNearestTargetWithShockStrike();
+
+
+                // find closest target , only among the enemies
+                // instatnitate thunderstrike
+                // setup thunder strike
+            }
+        }
+    }
+
+    public void ApplyShock(bool _shock)
+    {
+        if (isShocked)
+        {
+            return;
+        }
+
+        isShocked = _shock;
+        shockedTimer = ailmentsDuration;
+        fx.ShockFxFor(ailmentsDuration);
+    }
+
+    private void HitNearestTargetWithShockStrike()
+    {
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 25);
+
+        float closestDistance = Mathf.Infinity;
+        Transform closestEnemy = null;
+
+        foreach (var hit in colliders)
+        {
+            if (hit.GetComponent<Enemy>() != null &&
+                Vector2.Distance(transform.position, hit.transform.position) > 1)
+            {
+                float distance = Vector2.Distance(transform.position, hit.transform.position);
+                if (distance < closestDistance)
+                {
+                    closestDistance = distance;
+                    closestEnemy = hit.transform;
+                }
+            }
+
+            if (closestEnemy == null)
+            {
+                closestEnemy = transform;
+            }
+        }
+
+        if (closestEnemy != null)
+        {
+            GameObject newShockStrike = Instantiate(shockStrikePrefab, transform.position, Quaternion.identity);
+            newShockStrike.GetComponent<ThunderStrike_Controller>()
+                .Setup(shockDamage, closestEnemy.GetComponent<CharacterStats>());
         }
     }
 
     public void SetupIgniteDamage(int _damage) => igniteDamage = _damage;
+    public void SetupShockStrikeDamage(int _damage) => shockDamage = _damage;
 
     public virtual void TakeDamage(int damage)
     {
