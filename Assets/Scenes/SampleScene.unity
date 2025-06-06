@@ -2520,6 +2520,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitMat: {fileID: 2100000, guid: 66d4621599abf104e88cd09d2009fbc0, type: 2}
   flashDuration: 0.2
+  chillColor: []
+  igniteColor: []
+  shockColor: []
 --- !u!114 &1380262143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2560,10 +2563,10 @@ MonoBehaviour:
     baseValue: 5
     modifiers: 
   iceDamage:
-    baseValue: 1
+    baseValue: 6
     modifiers: 
   lightingDamage:
-    baseValue: 1
+    baseValue: 7
     modifiers: 
   damage:
     baseValue: 7
@@ -2577,6 +2580,7 @@ MonoBehaviour:
   isIgnited: 0
   isChill: 0
   isShocked: 0
+  ailmentsDuration: 4
   currentHealth: 0
 --- !u!1 &1412563339
 GameObject:
@@ -4687,28 +4691,36 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -6401674408598219534, guid: 35108bd2748354b4983fe4ca5228ce01, type: 3}
-      propertyPath: damage.baseValue
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: -6401674408598219534, guid: 35108bd2748354b4983fe4ca5228ce01, type: 3}
-      propertyPath: maxHealth.baseValue
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 1302470980409246185, guid: 35108bd2748354b4983fe4ca5228ce01, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2516572900732208034, guid: 35108bd2748354b4983fe4ca5228ce01, type: 3}
-      propertyPath: m_Value
-      value: 0.541
-      objectReference: {fileID: 0}
     - target: {fileID: 2711722318683168669, guid: 35108bd2748354b4983fe4ca5228ce01, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2711722318683168669, guid: 35108bd2748354b4983fe4ca5228ce01, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2711722318683168669, guid: 35108bd2748354b4983fe4ca5228ce01, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -128.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 2711722318683168669, guid: 35108bd2748354b4983fe4ca5228ce01, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2711722318683168669, guid: 35108bd2748354b4983fe4ca5228ce01, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -64.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2711722318683168669, guid: 35108bd2748354b4983fe4ca5228ce01, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584235747137229790, guid: 35108bd2748354b4983fe4ca5228ce01, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584235747137229790, guid: 35108bd2748354b4983fe4ca5228ce01, type: 3}
+      propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6824437023838449183, guid: 35108bd2748354b4983fe4ca5228ce01, type: 3}
