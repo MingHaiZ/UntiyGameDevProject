@@ -17,7 +17,7 @@ public class ItemObject : MonoBehaviour
     {
         if (other.GetComponent<Player>() != null)
         {
-            Debug.Log("Picked Up Item: " + itemData.itemName);
+            Inventory.instance.AddItem(itemData);
             Destroy(gameObject);
         }
     }
