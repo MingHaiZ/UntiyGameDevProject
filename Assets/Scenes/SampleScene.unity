@@ -4309,7 +4309,7 @@ MonoBehaviour:
     baseValue: 0
     modifiers: 
   lightingDamage:
-    baseValue: 15
+    baseValue: 0
     modifiers: 
   damage:
     baseValue: 0
@@ -5666,6 +5666,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0bfa9ee9d9dda9d4b8605b9341de9aa1, type: 2}
   - {fileID: 11400000, guid: 6351f6bc93807774fa6e4d1a23946e12, type: 2}
   - {fileID: 11400000, guid: 0705dcb1fed15c14e957d1d69e439825, type: 2}
+  - {fileID: 11400000, guid: b6b536637b8680043b180c478517877a, type: 2}
   equipment: []
   inventory: []
   stash: []
@@ -7027,11 +7028,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2711722318683168669, guid: 35108bd2748354b4983fe4ca5228ce01, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2711722318683168669, guid: 35108bd2748354b4983fe4ca5228ce01, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6824437023838449183, guid: 35108bd2748354b4983fe4ca5228ce01, type: 3}
       propertyPath: m_Name
@@ -7039,7 +7040,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6824437023838449183, guid: 35108bd2748354b4983fe4ca5228ce01, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7054070312001095456, guid: 35108bd2748354b4983fe4ca5228ce01, type: 3}
       propertyPath: m_LocalPosition.x
