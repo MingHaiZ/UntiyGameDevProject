@@ -16,10 +16,10 @@ public class PlayerAnimationTriggers : MonoBehaviour
         {
             if (hit.GetComponent<Enemy>() != null)
             {
-                
                 EnemyStats _target = hit.GetComponent<EnemyStats>();
                 player.stats.DoDamage(_target);
-                
+                // inventory get weapon call function
+                Inventory.instance.GetEquipmentType(EquipmentType.Weapon).ExecuteItemEffect();
             }
         }
     }
