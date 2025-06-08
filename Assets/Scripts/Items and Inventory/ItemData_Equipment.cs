@@ -42,11 +42,11 @@ public class ItemData_Equipment : ItemData
     public int lightingDamage;
 
 
-    public void ExecuteItemEffect()
+    public void Effect(Transform _enemyPosition)
     {
         foreach (var effect in itemEffects)
         {
-            effect.ExecuteEffect();
+            effect.ExecuteEffect(_enemyPosition);
         }
     }
     
