@@ -94,6 +94,11 @@ public class Player : Entity
         {
             Skill.crystal.CanUseSkill();
         }
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            Inventory.instance.UseFlask();
+        }
     }
 
     public override void SlowEntityBy(float _slowPercentage, float _slowDuration)
@@ -102,7 +107,7 @@ public class Player : Entity
         _jumpForce = _jumpForce * (1 - _slowPercentage);
         dashSpeed = dashSpeed * (1 - _slowPercentage);
         anim.speed = anim.speed * (1 - _slowPercentage);
-        Invoke("ReturnDefaultSpeed",_slowDuration);
+        Invoke("ReturnDefaultSpeed", _slowDuration);
     }
 
     protected override void ReturnDefaultSpeed()
