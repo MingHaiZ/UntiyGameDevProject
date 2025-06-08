@@ -4554,6 +4554,7 @@ GameObject:
   - component: {fileID: 1380262140}
   - component: {fileID: 1380262142}
   - component: {fileID: 1380262143}
+  - component: {fileID: 1380262144}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -4728,7 +4729,7 @@ MonoBehaviour:
     baseValue: 0
     modifiers: 
   maxHealth:
-    baseValue: 100
+    baseValue: 1
     modifiers: 
   armor:
     baseValue: 1
@@ -4763,6 +4764,23 @@ MonoBehaviour:
   ailmentsDuration: 4
   shockStrikePrefab: {fileID: 9026078145860699625, guid: bc4f91f0b664fb34480c03e7c455646e, type: 3}
   currentHealth: 0
+--- !u!114 &1380262144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1380262137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae41dd3c96793c348a38071f93a93a9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  possibleItemDrop: 0
+  possibleDrop: []
+  dropPrefab: {fileID: 9079514428875622120, guid: 460e1337c394c37418fb11b51d1b7884, type: 3}
+  chanceToLooseItems: 99
+  chanceTolLooseMaterials: 0
 --- !u!224 &1391884423 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
@@ -6236,6 +6254,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff7faba6aa0fa364486002ca7a95304a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startingEquipment:
+  - {fileID: 11400000, guid: 1ff072f5f6ecffc419f9e823d98d0fdb, type: 2}
+  - {fileID: 11400000, guid: 1ff072f5f6ecffc419f9e823d98d0fdb, type: 2}
+  - {fileID: 11400000, guid: efad6bba159b70540a7de99d0b62e96e, type: 2}
+  - {fileID: 11400000, guid: 0bfa9ee9d9dda9d4b8605b9341de9aa1, type: 2}
+  - {fileID: 11400000, guid: 6351f6bc93807774fa6e4d1a23946e12, type: 2}
   equipment: []
   inventory: []
   stash: []

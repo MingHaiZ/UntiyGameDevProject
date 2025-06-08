@@ -77,7 +77,7 @@ public class CharacterStats : MonoBehaviour
     private int igniteDamage;
     [SerializeField] private GameObject shockStrikePrefab;
     private int shockDamage;
-    protected bool isDead;
+    public bool isDead { get; private set; }
 
     #endregion
 
@@ -223,7 +223,7 @@ public class CharacterStats : MonoBehaviour
         int _fireDamage = fireDamage.GetValue();
         int _iceDamage = iceDamage.GetValue();
         int _lightingDamage = lightingDamage.GetValue();
-        
+
 
         int totalMagicDamage = _fireDamage + _iceDamage + _lightingDamage + intelligence.GetValue();
 
@@ -239,7 +239,7 @@ public class CharacterStats : MonoBehaviour
         bool canApplyIgnite = _fireDamage > _iceDamage && _fireDamage > _lightingDamage;
         bool canApplyChill = _iceDamage > _lightingDamage && _iceDamage > _fireDamage;
         bool canApplyShock = _lightingDamage > _fireDamage && _lightingDamage > _iceDamage;
-        
+
 
         AttempedToApplyAilements(_targetStats, canApplyIgnite, canApplyChill, canApplyShock, _fireDamage, _iceDamage,
             _lightingDamage);
@@ -290,7 +290,7 @@ public class CharacterStats : MonoBehaviour
         bool canApplyIgnite = !isChill && !isShocked;
         bool canApplyChill = !isIgnited && !isShocked;
         bool canApplyShock = !isIgnited && !isChill;
-        
+
         if (_ignite && canApplyIgnite)
         {
             isIgnited = _ignite;

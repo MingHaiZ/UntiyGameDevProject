@@ -10,6 +10,8 @@ public class Inventory : MonoBehaviour
 {
     public static Inventory instance;
 
+    public List<ItemData> startingEquipment;
+
     public List<InventoryItem> equipment;
     public Dictionary<ItemData_Equipment, InventoryItem> equipmentDictionary;
 
@@ -26,7 +28,7 @@ public class Inventory : MonoBehaviour
     [SerializeField] private Transform equipmentSlotParent;
     private UI_ItemSlot[] inventoryItemSlot;
     private UI_ItemSlot[] stashItemSlot;
-    private UI_EquipmentSlot[] equipmentItemSlot;
+    public UI_EquipmentSlot[] equipmentItemSlot;
 
     private void Awake()
     {
@@ -53,6 +55,16 @@ public class Inventory : MonoBehaviour
         inventoryItemSlot = inventorySlotParent.GetComponentsInChildren<UI_ItemSlot>();
         stashItemSlot = stashSlotParent.GetComponentsInChildren<UI_ItemSlot>();
         equipmentItemSlot = equipmentSlotParent.GetComponentsInChildren<UI_EquipmentSlot>();
+
+        AddStartingItems();
+    }
+
+    private void AddStartingItems()
+    {
+        for (int i = 0; i < startingEquipment.Count; i++)
+        {
+            AddItem(startingEquipment[i]);
+        }
     }
 
     public void EquipItem(ItemData _item)
@@ -74,13 +86,12 @@ public class Inventory : MonoBehaviour
         {
             UnequipItem(oldEquipment);
             AddItem(oldEquipment);
-            
         }
-        
+
         equipment.Add(newItem);
         equipmentDictionary.Add(newEquipment, newItem);
         newEquipment.AddModifiers();
-        
+
         RemoveItem(_item);
         UpdateSlotUI();
     }
@@ -89,7 +100,6 @@ public class Inventory : MonoBehaviour
     {
         if (equipmentDictionary.TryGetValue(itemToDelete, out InventoryItem value))
         {
-            
             equipment.Remove(value);
             equipmentDictionary.Remove(itemToDelete);
             itemToDelete.RemoveModifiers();
@@ -198,4 +208,8 @@ public class Inventory : MonoBehaviour
 
         UpdateSlotUI();
     }
+
+    public List<InventoryItem> GetEquipment() => equipment;
+
+    public List<InventoryItem> GetStashList() => stash;
 }
