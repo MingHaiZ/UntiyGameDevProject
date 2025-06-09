@@ -5,6 +5,24 @@ using UnityEngine.Serialization;
 using UnityEngine.TextCore.Text;
 using Random = UnityEngine.Random;
 
+public enum StatType
+{
+    strength,
+    agility,
+    intelligence,
+    vitality,
+    damage,
+    critChance,
+    critPower,
+    health,
+    Armor,
+    evasion,
+    magicResistance,
+    fireDamage,
+    iceDamage,
+    lightingDamage,
+}
+
 public class CharacterStats : MonoBehaviour
 {
     private EntityFX fx;
@@ -451,4 +469,41 @@ public class CharacterStats : MonoBehaviour
     }
 
     #endregion
+    
+    public Stat GetStat(StatType _statType)
+    {
+        switch (_statType)
+        {
+            case StatType.strength:
+                return strength;
+            case StatType.agility:
+                return agility;
+            case StatType.intelligence:
+                return intelligence;
+            case StatType.vitality:
+                return vitality;
+            case StatType.damage:
+                return damage;
+            case StatType.critChance:
+                return critChance;
+            case StatType.critPower:
+                return critPower;
+            case StatType.health:
+                return maxHealth;
+            case StatType.Armor:
+                return armor;
+            case StatType.evasion:
+                return evasion;
+            case StatType.magicResistance:
+                return magicResistance;
+            case StatType.fireDamage:
+                return fireDamage;
+            case StatType.iceDamage:
+                return iceDamage;
+            case StatType.lightingDamage:
+                return lightingDamage;
+            default:
+                return null;
+        }
+    }
 }
