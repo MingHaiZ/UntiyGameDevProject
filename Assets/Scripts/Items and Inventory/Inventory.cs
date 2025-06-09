@@ -75,7 +75,10 @@ public class Inventory : MonoBehaviour
     {
         for (int i = 0; i < startingEquipment.Count; i++)
         {
-            AddItem(startingEquipment[i]);
+            if (startingEquipment[i] != null)
+            {
+                AddItem(startingEquipment[i]);
+            }
         }
     }
 

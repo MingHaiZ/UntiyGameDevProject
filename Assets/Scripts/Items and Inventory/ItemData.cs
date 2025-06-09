@@ -1,5 +1,6 @@
 using System.Text;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public enum ItemType
 {
@@ -12,7 +13,7 @@ public class ItemData : ScriptableObject
 {
     public ItemType ItemType;
     public string itemName;
-    public Sprite icon;
+    [FormerlySerializedAs("icon")] public Sprite itemIcon;
 
     [Range(0f, 100f)]
     public float dropChance;

@@ -12,6 +12,7 @@ public class UI : MonoBehaviour
 
     public UI_ItemTooltip itemTooltip;
     public UI_StatToolTip statTooltip;
+    public UI_CraftWindow craftWindow;
 
     // Start is called before the first frame update
     void Start()
