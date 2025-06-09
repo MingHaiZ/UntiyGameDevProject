@@ -44,7 +44,7 @@ public class ItemData_Equipment : ItemData
     public int lightingDamage;
 
     [Header("Craft requirements")]
-    public List<Inventory> craftingMaterials;
+    public List<InventoryItem> craftingMaterials;
 
     private int descriptionLength;
 

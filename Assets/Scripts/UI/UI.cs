@@ -5,8 +5,7 @@ public class UI : MonoBehaviour
 {
     [SerializeField] private GameObject characterUI;
 
-    [FormerlySerializedAs("SkillTreeUI")] [FormerlySerializedAs("SkillUI")] [SerializeField]
-    private GameObject skillTreeUI;
+    [SerializeField] private GameObject skillTreeUI;
 
     [SerializeField] private GameObject craftUI;
     [SerializeField] private GameObject optionsUI;
