@@ -161,7 +161,7 @@ public class Inventory : MonoBehaviour
 
     public void AddItem(ItemData _item)
     {
-        if (_item.ItemType == ItemType.Equipment)
+        if (_item.ItemType == ItemType.Equipment && CanAddItem())
         {
             AddToInventory(_item);
         } else if (_item.ItemType == ItemType.Material)
@@ -225,6 +225,17 @@ public class Inventory : MonoBehaviour
         }
 
         UpdateSlotUI();
+    }
+
+    public bool CanAddItem()
+    {
+        if (inventory.Count >= inventoryItemSlot.Length)
+        {
+            Debug.Log("No more slot");
+            return false;
+        }
+
+        return true;
     }
 
     public List<InventoryItem> GetEquipment() => equipment;
