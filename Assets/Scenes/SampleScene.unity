@@ -25935,11 +25935,12 @@ MonoBehaviour:
   coolDown: 0
   crystalDuration: 1.5
   crystalPrefab: {fileID: 2415078433825238668, guid: 3194a0bd980a3384cb230c255ee3ae53, type: 3}
-  cloneInsteadOfCrystal: 0
-  canExplode: 0
-  canMoveToEnemy: 0
+  unlockCloneInsteadButton: {fileID: 768964628}
+  unlockCrystalButton: {fileID: 2049361197}
+  unlockExplosiveButton: {fileID: 2033809716}
+  unlockMovingCrystalButton: {fileID: 2091066010}
   moveSpeed: 5
-  canUseMultiStacks: 0
+  unlockMultiStackButton: {fileID: 1215480047}
   amountOfStacks: 3
   multiStackCooldown: 4
   useTimeWindow: 2.5

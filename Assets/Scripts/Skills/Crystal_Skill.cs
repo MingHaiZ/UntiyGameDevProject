@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Crystal_Skill : Skill
 {
@@ -9,23 +10,53 @@ public class Crystal_Skill : Skill
     private GameObject currentCrystal;
 
     [Header("Crystal mirage")]
-    [SerializeField] private bool cloneInsteadOfCrystal;
+    [SerializeField] private UI_SkillTreeslot unlockCloneInsteadButton;
+
+    public bool cloneInsteadOfCrystal { get; private set; }
+
+    [Header("Crystal simple")]
+    [SerializeField] private UI_SkillTreeslot unlockCrystalButton;
+
+    public bool crystalUnlocked { get; private set; }
 
     [Header("Explosive crystal")]
-    [SerializeField] private bool canExplode;
+    [SerializeField] private UI_SkillTreeslot unlockExplosiveButton;
+
+    public bool canExplode { get; private set; }
 
     [Header("Moving crystal")]
-    [SerializeField] private bool canMoveToEnemy;
+    [SerializeField] private UI_SkillTreeslot unlockMovingCrystalButton;
+
+    public bool canMoveToEnemy { get; private set; }
 
     [SerializeField] private float moveSpeed;
 
     [Header("Multi stacking crystal")]
-    [SerializeField] private bool canUseMultiStacks;
+    [SerializeField] private UI_SkillTreeslot unlockMultiStackButton;
+
+    public bool canUseMultiStacks { get; private set; }
 
     [SerializeField] private int amountOfStacks;
     [SerializeField] private float multiStackCooldown;
     [SerializeField] private float useTimeWindow;
     [SerializeField] private List<GameObject> crystalList = new List<GameObject>();
+
+    protected override void Start()
+    {
+        base.Start();
+        unlockCrystalButton.GetComponent<Button>().onClick.AddListener(UnlockCrystal);
+        unlockCloneInsteadButton.GetComponent<Button>().onClick.AddListener(UnlockCrystalMirage);
+        unlockExplosiveButton.GetComponent<Button>().onClick.AddListener(UnlockCrystalExplosion);
+        unlockMultiStackButton.GetComponent<Button>().onClick.AddListener(UnlockCrystalMultiStack);
+        unlockMovingCrystalButton.GetComponent<Button>().onClick.AddListener(UnlockCrystalMovingToEnemy);
+        
+    }
+
+    private void UnlockCrystal() => crystalUnlocked = unlockCrystalButton.unlocked;
+    private void UnlockCrystalMirage() => cloneInsteadOfCrystal = unlockCloneInsteadButton.unlocked;
+    private void UnlockCrystalExplosion() => canExplode = unlockExplosiveButton.unlocked;
+    private void UnlockCrystalMultiStack() => canUseMultiStacks = unlockMultiStackButton.unlocked;
+    private void UnlockCrystalMovingToEnemy() => canMoveToEnemy = unlockMovingCrystalButton.unlocked;
 
     public override void useSkill()
     {
@@ -69,7 +100,8 @@ public class Crystal_Skill : Skill
             FindClosestEnemy(currentCrystal.transform));
     }
 
-    public void CurrentCrystalChooseRandomTarget() => currentCrystal.GetComponent<Crystal_Skill_Controller>().ChooseRandomEnemy();
+    public void CurrentCrystalChooseRandomTarget() =>
+        currentCrystal.GetComponent<Crystal_Skill_Controller>().ChooseRandomEnemy();
 
 
     private bool CanUseMultiCtystal()

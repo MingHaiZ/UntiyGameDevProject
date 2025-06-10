@@ -90,7 +90,7 @@ public class Player : Entity
         stateMachine.currentState.Update();
         CheckForDashInput();
 
-        if (Input.GetKeyDown(KeyCode.F) && stateMachine.currentState != BlackholeState)
+        if (Input.GetKeyDown(KeyCode.F) && stateMachine.currentState != BlackholeState &&Skill.crystal.crystalUnlocked)
         {
             Skill.crystal.CanUseSkill();
         }
