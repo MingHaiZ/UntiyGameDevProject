@@ -11890,6 +11890,7 @@ MonoBehaviour:
   unlocked: 0
   shouldBeUnlocked:
   - {fileID: 2136128278}
+  - {fileID: 2049361197}
   shouldBelocked:
   - {fileID: 676294791}
 --- !u!114 &836164814
@@ -25790,11 +25791,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coolDown: 1
+  attackMultiplier: 0
   clonePrefab: {fileID: 3985630790516676896, guid: efb7843632db6f144bea9583770473eb, type: 3}
   cloneDuration: 1
+  cloneAttackUnlockButton: {fileID: 82474015}
+  cloneAttackMultiplier: 0.3
   canAttack: 0
+  aggresiveCloneUnlockButton: {fileID: 2136128278}
+  aggresiveCloneAttackMultiplier: 0.8
+  multipleCloneUnlockButton: {fileID: 676294791}
+  multiCloneAttackMultiplier: 0.5
   canDuplicateClone: 0
   chanceToDuplicate: 35
+  crystalInseadUnlockButton: {fileID: 836164813}
   crystalInsteadOfClone: 0
 --- !u!114 &1890083893
 MonoBehaviour:
@@ -25849,6 +25858,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coolDown: 0
+  blackHoleUnlockButton: {fileID: 802609871}
   blackholePrefab: {fileID: 3861346839227487562, guid: 0fbb8127855140041af7667d0ead15f7, type: 3}
   maxSize: 15
   growSpeed: 3

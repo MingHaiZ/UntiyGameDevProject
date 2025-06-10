@@ -39,4 +39,30 @@ public class PlayerStats : CharacterStats
     {
         player.Skill.dodge.CreateMirageOnDodge();
     }
+
+    public void CloneDoDamage(CharacterStats _targetStats, float _multiplier)
+    {
+        if (TargetCanAvoidAttack(_targetStats))
+        {
+            return;
+        }
+
+
+        int totalDamage = damage.GetValue() + strength.GetValue();
+
+        if (_multiplier > 0)
+        {
+            totalDamage *= Mathf.RoundToInt(_multiplier);
+        }
+
+        if (CanCrit())
+        {
+            totalDamage = CalculateCriticalDamage(totalDamage);
+        }
+
+        totalDamage = CheckTargetArmor(_targetStats, totalDamage);
+        _targetStats.TakeDamage(totalDamage);
+        // if invnteroy current weapon has fire effect   
+        DoMagicalDamage(_targetStats);
+    }
 }
