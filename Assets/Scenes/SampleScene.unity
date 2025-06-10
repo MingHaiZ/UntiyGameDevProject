@@ -800,10 +800,10 @@ RectTransform:
   - {fileID: 524402260}
   m_Father: {fileID: 317116822}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1350, y: -50}
-  m_SizeDelta: {x: 300, y: 80}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &80864740
 MonoBehaviour:
@@ -9892,7 +9892,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0}
+  m_AnchoredPosition: {x: 0, y: -81}
   m_SizeDelta: {x: 1500, y: 843}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &758979225
@@ -13140,10 +13140,10 @@ RectTransform:
   - {fileID: 203600577}
   m_Father: {fileID: 317116822}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 450, y: -50}
-  m_SizeDelta: {x: 300, y: 80}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &943778831
 MonoBehaviour:
@@ -16335,10 +16335,10 @@ RectTransform:
   - {fileID: 1111299639}
   m_Father: {fileID: 317116822}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 750, y: -50}
-  m_SizeDelta: {x: 300, y: 80}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1237845352
 MonoBehaviour:
@@ -17812,10 +17812,10 @@ RectTransform:
   - {fileID: 1512305055}
   m_Father: {fileID: 317116822}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1050, y: -50}
-  m_SizeDelta: {x: 300, y: 80}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1352440146
 MonoBehaviour:
@@ -25724,6 +25724,7 @@ GameObject:
   - component: {fileID: 1890083894}
   - component: {fileID: 1890083897}
   - component: {fileID: 1890083898}
+  - component: {fileID: 1890083899}
   - component: {fileID: 1890083896}
   - component: {fileID: 1890083895}
   m_Layer: 0
@@ -25965,6 +25966,24 @@ MonoBehaviour:
   restoreUnlockButton: {fileID: 1328607222}
   restoreHealthAmount: 0.05
   parryWithMirageUnlockButton: {fileID: 1481769141}
+--- !u!114 &1890083899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890083888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 308eb86712ceec24f99557849c258375, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coolDown: 0
+  unlockDodgeButton: {fileID: 1008218852}
+  evasionAmount: 10
+  dodgeUnlocked: 0
+  unlockMirageDodgeButton: {fileID: 2069368434}
+  dodgeMirageUnlocked: 0
 --- !u!1 &1918090985
 GameObject:
   m_ObjectHideFlags: 0

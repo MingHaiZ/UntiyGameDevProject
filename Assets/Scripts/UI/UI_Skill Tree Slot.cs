@@ -41,12 +41,15 @@ public class UI_SkillTreeslot : MonoBehaviour, IPointerEnterHandler, IPointerExi
         ui = GetComponentInParent<UI>();
 
         skillImage.color = unLockedSkillColor;
-
-        
     }
 
     public void UnlockSkillSlot()
     {
+        if (unlocked)
+        {
+            return;
+        }
+
         if (!PlayerManager.instance.HaveEngouthMoney(skillPrice))
         {
             return;
