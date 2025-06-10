@@ -4,19 +4,22 @@ using UnityEngine.UI;
 public class Dash_Skill : Skill
 {
     [Header("Dash")]
-    public bool dashUnlocked;
-
     [SerializeField] private UI_SkillTreeslot dashUnlockButton;
 
-    [Header("Clone on dash")]
-    public bool cloneOnDashUnlocked;
+    public bool dashUnlocked { get; private set; }
 
+
+    [Header("Clone on dash")]
     [SerializeField] private UI_SkillTreeslot cloneOnDashUnlockButton;
 
-    [Header("Clone on arrival")]
-    public bool cloneOnArrivalUnlocked;
+    public bool cloneOnDashUnlocked { get; private set; }
 
+
+    [Header("Clone on arrival")]
     [SerializeField] private UI_SkillTreeslot cloneOnArrivalUnlockButton;
+
+    public bool cloneOnArrivalUnlocked { get; private set; }
+
 
     public override void useSkill()
     {
@@ -31,10 +34,10 @@ public class Dash_Skill : Skill
         cloneOnArrivalUnlockButton.GetComponent<Button>().onClick.AddListener(UnlockCloneOnArrival);
     }
 
-    private void UnlockDash() => dashUnlocked = dashUnlockButton;
-    private void UnlockCloneDash() => cloneOnDashUnlocked = dashUnlockButton;
-    private void UnlockCloneOnArrival() => cloneOnArrivalUnlocked = dashUnlockButton;
-    
+    private void UnlockDash() => dashUnlocked = dashUnlockButton.unlocked;
+    private void UnlockCloneDash() => cloneOnDashUnlocked = cloneOnDashUnlockButton.unlocked;
+    private void UnlockCloneOnArrival() => cloneOnArrivalUnlocked = cloneOnArrivalUnlockButton.unlocked;
+
     public void CloneOnDash()
     {
         if (cloneOnDashUnlocked)

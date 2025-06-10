@@ -30,6 +30,11 @@ public class UI_SkillTreeslot : MonoBehaviour, IPointerEnterHandler, IPointerExi
         gameObject.name = "SkillTreeSlot_UI - " + skillName;
     }
 
+    private void Awake()
+    {
+        GetComponent<Button>().onClick.AddListener(() => UnlockSkillSlot());
+    }
+
     private void Start()
     {
         skillImage = GetComponent<Image>();
@@ -37,7 +42,7 @@ public class UI_SkillTreeslot : MonoBehaviour, IPointerEnterHandler, IPointerExi
 
         skillImage.color = unLockedSkillColor;
 
-        GetComponent<Button>().onClick.AddListener(() => UnlockSkillSlot());
+        
     }
 
     public void UnlockSkillSlot()
