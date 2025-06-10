@@ -98,6 +98,8 @@ public class CharacterStats : MonoBehaviour
     private int shockDamage;
     public bool isDead { get; private set; }
 
+    private bool isVulnerable;
+
     #endregion
 
 
@@ -171,6 +173,16 @@ public class CharacterStats : MonoBehaviour
                 ignitedDamageTimer = ingniedDamageCooldown;
             }
         }
+    }
+
+    public void MakeVulnerableFor(float _duration) => StartCoroutine(nameof(VulnerableForCorutine), _duration);
+
+
+    private IEnumerator VulnerableForCorutine(float _duration)
+    {
+        isVulnerable = true;
+        yield return new WaitForSeconds(_duration);
+        isVulnerable = false;
     }
 
     public virtual void IncreaseStatBy(int _modifier, float _duration, Stat _statToModify)
@@ -438,6 +450,11 @@ public class CharacterStats : MonoBehaviour
 
     protected virtual void DecreaseHealth(int _damage)
     {
+        if (isVulnerable)
+        {
+            _damage = Mathf.RoundToInt(_damage * 1.1f);
+        }
+
         currentHealth -= _damage;
         if (OnHealthChanged != null)
         {
