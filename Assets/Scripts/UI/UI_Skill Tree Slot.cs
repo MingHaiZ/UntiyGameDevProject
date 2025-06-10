@@ -9,6 +9,7 @@ public class UI_SkillTreeslot : MonoBehaviour, IPointerEnterHandler, IPointerExi
     private UI ui;
     private Image skillImage;
 
+    [SerializeField] private int skillPrice;
     [SerializeField] private string skillName;
 
     [TextArea]
@@ -41,6 +42,11 @@ public class UI_SkillTreeslot : MonoBehaviour, IPointerEnterHandler, IPointerExi
 
     public void UnlockSkillSlot()
     {
+        if (!PlayerManager.instance.HaveEngouthMoney(skillPrice))
+        {
+            return;
+        }
+
         for (int i = 0; i < shouldBeUnlocked.Length; i++)
         {
             if (!shouldBeUnlocked[i].unlocked)
