@@ -7,6 +7,7 @@ public class GameData
 {
     public int currency;
     public SerializableDictionary<string, int> inventory;
+    public List<string> equipmentId;
 
     public GameData()
     {

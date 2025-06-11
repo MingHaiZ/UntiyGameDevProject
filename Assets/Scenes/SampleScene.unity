@@ -27240,8 +27240,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingEquipment:
-  - {fileID: 11400000, guid: 1ff072f5f6ecffc419f9e823d98d0fdb, type: 2}
-  - {fileID: 11400000, guid: efad6bba159b70540a7de99d0b62e96e, type: 2}
   - {fileID: 11400000, guid: 6351f6bc93807774fa6e4d1a23946e12, type: 2}
   - {fileID: 11400000, guid: 0705dcb1fed15c14e957d1d69e439825, type: 2}
   - {fileID: 11400000, guid: b6b536637b8680043b180c478517877a, type: 2}
@@ -27252,6 +27250,22 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 177abdd98e5f32a40b8da68db7a064aa, type: 2}
   - {fileID: 11400000, guid: 65d1b5a7204e91c46a05dbeed7ab0443, type: 2}
   - {fileID: 11400000, guid: 2dd3542cf32bf6343ac07a02ca457f52, type: 2}
+  - {fileID: 11400000, guid: efad6bba159b70540a7de99d0b62e96e, type: 2}
+  - {fileID: 11400000, guid: efad6bba159b70540a7de99d0b62e96e, type: 2}
+  - {fileID: 11400000, guid: efad6bba159b70540a7de99d0b62e96e, type: 2}
+  - {fileID: 11400000, guid: efad6bba159b70540a7de99d0b62e96e, type: 2}
+  - {fileID: 11400000, guid: efad6bba159b70540a7de99d0b62e96e, type: 2}
+  - {fileID: 11400000, guid: efad6bba159b70540a7de99d0b62e96e, type: 2}
+  - {fileID: 11400000, guid: efad6bba159b70540a7de99d0b62e96e, type: 2}
+  - {fileID: 11400000, guid: efad6bba159b70540a7de99d0b62e96e, type: 2}
+  - {fileID: 11400000, guid: efad6bba159b70540a7de99d0b62e96e, type: 2}
+  - {fileID: 11400000, guid: efad6bba159b70540a7de99d0b62e96e, type: 2}
+  - {fileID: 11400000, guid: 1ff072f5f6ecffc419f9e823d98d0fdb, type: 2}
+  - {fileID: 11400000, guid: 1ff072f5f6ecffc419f9e823d98d0fdb, type: 2}
+  - {fileID: 11400000, guid: 1ff072f5f6ecffc419f9e823d98d0fdb, type: 2}
+  - {fileID: 11400000, guid: 1ff072f5f6ecffc419f9e823d98d0fdb, type: 2}
+  - {fileID: 11400000, guid: 1ff072f5f6ecffc419f9e823d98d0fdb, type: 2}
+  - {fileID: 11400000, guid: 1ff072f5f6ecffc419f9e823d98d0fdb, type: 2}
   equipment: []
   inventory: []
   stash: []
@@ -27260,6 +27274,8 @@ MonoBehaviour:
   equipmentSlotParent: {fileID: 1142853525}
   statSlotParent: {fileID: 1404650418}
   flaskCooldown: 0
+  loadedItems: []
+  loadedEquipment: []
 --- !u!4 &1792519181
 Transform:
   m_ObjectHideFlags: 0

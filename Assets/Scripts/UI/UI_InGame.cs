@@ -30,6 +30,7 @@ public class UI_InGame : MonoBehaviour
         }
 
         skills = SkillManager.instance;
+        UpdateHealthUI();
     }
 
     // Update is called once per frame
