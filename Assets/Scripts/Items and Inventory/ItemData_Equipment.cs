@@ -19,9 +19,6 @@ public class ItemData_Equipment : ItemData
 
     public ItemEffect[] itemEffects;
 
-    [TextArea]
-    public string itemEffectDescription;
-
     [Header("Major stats")]
     public int strength;
 
@@ -126,6 +123,16 @@ public class ItemData_Equipment : ItemData
         AddItemDescription(iceDamage, "iceDamage");
         AddItemDescription(lightingDamage, "lightingDamage");
 
+        for (int i = 0; i < itemEffects.Length; i++)
+        {
+            if (itemEffects[i].effectDescription.Length > 0)
+            {
+                sb.AppendLine();
+                sb.Append(itemEffects[i].effectDescription);
+                descriptionLength++;
+            }
+        }
+
         if (descriptionLength < 5)
         {
             for (int i = 0; i < 5 - descriptionLength; i++)
@@ -135,11 +142,6 @@ public class ItemData_Equipment : ItemData
             }
         }
 
-        if (itemEffectDescription.Length > 0)
-        {
-            sb.AppendLine();
-            sb.Append(itemEffectDescription);
-        }
 
         return sb.ToString();
     }

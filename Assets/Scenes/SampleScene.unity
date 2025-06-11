@@ -546,6 +546,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 644e145d9ca5404429ec4d9d2c0810a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xLimit: 960
+  yLimit: 540
+  xOffset: 150
+  yOffset: 150
   skillPrice: 0
   skillName: Bullet sword
   skillDescription: 
@@ -931,6 +935,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 644e145d9ca5404429ec4d9d2c0810a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xLimit: 960
+  yLimit: 540
+  xOffset: 150
+  yOffset: 150
   skillPrice: 0
   skillName: Time mirage
   skillDescription: 
@@ -1070,7 +1078,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_AnchorMin.x
@@ -1078,15 +1086,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1118,11 +1126,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 400.49704
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -199.531
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1208,10 +1216,10 @@ RectTransform:
   - {fileID: 959462437}
   m_Father: {fileID: 594245183}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 605, y: -52.892952}
-  m_SizeDelta: {x: 350, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &94748477
 MonoBehaviour:
@@ -1388,7 +1396,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_AnchorMin.x
@@ -1396,15 +1404,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1436,11 +1444,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 70.49704
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -199.531
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1549,6 +1557,7 @@ GameObject:
   - component: {fileID: 108737413}
   - component: {fileID: 108737415}
   - component: {fileID: 108737412}
+  - component: {fileID: 108737417}
   m_Layer: 5
   m_Name: Item_ToolTip
   m_TagString: Untagged
@@ -1590,6 +1599,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd50f956eabc08d4cbd69ec3936d2e50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xLimit: 960
+  yLimit: 540
+  xOffset: 150
+  yOffset: 150
   itemNameText: {fileID: 1249641259}
   itemTypeText: {fileID: 962974944}
   itemDescription: {fileID: 1298582180}
@@ -1672,6 +1685,18 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!225 &108737417
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108737410}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &109509692
 GameObject:
   m_ObjectHideFlags: 0
@@ -1706,10 +1731,10 @@ RectTransform:
   - {fileID: 1971963504}
   m_Father: {fileID: 618376740}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 605, y: -122.89295}
-  m_SizeDelta: {x: 350, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &109509694
 MonoBehaviour:
@@ -1934,10 +1959,10 @@ RectTransform:
   - {fileID: 808177804}
   m_Father: {fileID: 799291430}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1350, y: -50}
+  m_SizeDelta: {x: 300, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &128006084
 MonoBehaviour:
@@ -2866,7 +2891,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_AnchorMin.x
@@ -2874,15 +2899,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2914,11 +2939,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 510.49704
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -89.531006
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2970,7 +2995,7 @@ RectTransform:
   m_Father: {fileID: 1365351568}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 1.4000015}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3147,10 +3172,10 @@ RectTransform:
   - {fileID: 1299109173}
   m_Father: {fileID: 1528979323}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 605, y: -103.99}
-  m_SizeDelta: {x: 350, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &270047161
 MonoBehaviour:
@@ -3385,10 +3410,10 @@ RectTransform:
   - {fileID: 1969552577}
   m_Father: {fileID: 1528979323}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 605, y: -173.98999}
-  m_SizeDelta: {x: 350, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &287932512
 MonoBehaviour:
@@ -4741,6 +4766,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 644e145d9ca5404429ec4d9d2c0810a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xLimit: 960
+  yLimit: 540
+  xOffset: 150
+  yOffset: 150
   skillPrice: 5001
   skillName: Dash - "Actually here I am"
   skillDescription: 
@@ -4786,6 +4815,140 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 380308877}
+  m_CullTransparentMesh: 1
+--- !u!1 &403549427
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 403549428}
+  - component: {fileID: 403549430}
+  - component: {fileID: 403549429}
+  m_Layer: 5
+  m_Name: SkillCost
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &403549428
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403549427}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 965391890}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0, y: 33.6}
+  m_SizeDelta: {x: 0, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &403549429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403549427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: New Text
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 84bdc42b70bb5e54aa18bb33c1fa834e, type: 2}
+  m_sharedMaterial: {fileID: -8065883861848785263, guid: 84bdc42b70bb5e54aa18bb33c1fa834e, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 4
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 10.058533, y: 0, z: 10.776733, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &403549430
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403549427}
   m_CullTransparentMesh: 1
 --- !u!1 &412333237
 GameObject:
@@ -5087,10 +5250,10 @@ RectTransform:
   - {fileID: 1337018424}
   m_Father: {fileID: 1528979323}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 605, y: -33.989998}
-  m_SizeDelta: {x: 350, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &457231195
 MonoBehaviour:
@@ -5223,7 +5386,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &462165403
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6341,10 +6504,10 @@ RectTransform:
   - {fileID: 634741693}
   m_Father: {fileID: 1528979323}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 215, y: -173.98999}
-  m_SizeDelta: {x: 350, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &532592897
 MonoBehaviour:
@@ -6693,6 +6856,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 644e145d9ca5404429ec4d9d2c0810a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xLimit: 960
+  yLimit: 540
+  xOffset: 150
+  yOffset: 150
   skillPrice: 0
   skillName: Time stop
   skillDescription: when enemy hit by sword, his time stops
@@ -7003,10 +7170,10 @@ RectTransform:
   - {fileID: 1418083509}
   m_Father: {fileID: 594245183}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 215, y: -122.89295}
-  m_SizeDelta: {x: 350, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &543183105
 MonoBehaviour:
@@ -7250,7 +7417,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 25.543396, z: 0, w: 0}
+  m_margin: {x: 0, y: 50.953415, z: 0, w: 67.76007}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -8650,6 +8817,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 644e145d9ca5404429ec4d9d2c0810a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xLimit: 960
+  yLimit: 540
+  xOffset: 150
+  yOffset: 150
   skillPrice: 0
   skillName: Vulnerability
   skillDescription: 
@@ -9483,6 +9654,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 644e145d9ca5404429ec4d9d2c0810a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xLimit: 960
+  yLimit: 540
+  xOffset: 150
+  yOffset: 150
   skillPrice: 0
   skillName: Multiple mirage
   skillDescription: 
@@ -10146,6 +10321,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 644e145d9ca5404429ec4d9d2c0810a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xLimit: 960
+  yLimit: 540
+  xOffset: 150
+  yOffset: 150
   skillPrice: 0
   skillName: Chain saw sword
   skillDescription: 
@@ -11460,6 +11639,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 644e145d9ca5404429ec4d9d2c0810a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xLimit: 960
+  yLimit: 540
+  xOffset: 150
+  yOffset: 150
   skillPrice: 0
   skillName: Mirage blink
   skillDescription: 
@@ -12272,6 +12455,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 644e145d9ca5404429ec4d9d2c0810a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xLimit: 960
+  yLimit: 540
+  xOffset: 150
+  yOffset: 150
   skillPrice: 0
   skillName: Blackhole
   skillDescription: 
@@ -12863,10 +13050,10 @@ RectTransform:
   - {fileID: 767988215}
   m_Father: {fileID: 594245183}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 605, y: -122.89295}
-  m_SizeDelta: {x: 350, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &817990934
 MonoBehaviour:
@@ -13319,6 +13506,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 644e145d9ca5404429ec4d9d2c0810a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xLimit: 960
+  yLimit: 540
+  xOffset: 150
+  yOffset: 150
   skillPrice: 0
   skillName: Crystal mirage
   skillDescription: 
@@ -13850,13 +14041,14 @@ GameObject:
   - component: {fileID: 874907020}
   - component: {fileID: 874907019}
   - component: {fileID: 874907018}
+  - component: {fileID: 874907022}
   m_Layer: 5
   m_Name: Stat_Tooltip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &874907018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13869,6 +14061,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6ce8819c3a1d32489da3c388f17c0c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xLimit: 960
+  yLimit: 540
+  xOffset: 150
+  yOffset: 150
   description: {fileID: 1393063446}
 --- !u!114 &874907019
 MonoBehaviour:
@@ -13928,6 +14124,18 @@ RectTransform:
   m_AnchoredPosition: {x: 534, y: -537}
   m_SizeDelta: {x: 700, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &874907022
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 874907017}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &882779999
 GameObject:
   m_ObjectHideFlags: 0
@@ -14413,7 +14621,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_AnchorMin.x
@@ -14421,15 +14629,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14461,11 +14669,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 180.49704
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -89.531006
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -15133,13 +15341,14 @@ GameObject:
   - component: {fileID: 965391892}
   - component: {fileID: 965391891}
   - component: {fileID: 965391889}
+  - component: {fileID: 965391893}
   m_Layer: 5
   m_Name: SkillToolTip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &965391889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15152,8 +15361,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcd9d46a4301fc14f8f1dcc59163f238, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xLimit: 960
+  yLimit: 540
+  xOffset: 300
+  yOffset: 100
   skillText: {fileID: 544263681}
   skillName: {fileID: 1768022262}
+  skillCost: {fileID: 403549429}
+  defaultNameFontSize: 36
 --- !u!224 &965391890
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15168,12 +15383,13 @@ RectTransform:
   m_Children:
   - {fileID: 1768022264}
   - {fileID: 544263679}
+  - {fileID: 403549428}
   m_Father: {fileID: 1142601301}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4, y: 264}
-  m_SizeDelta: {x: 1045.2178, y: 140.2538}
+  m_AnchorMin: {x: 0.5, y: 0.057000004}
+  m_AnchorMax: {x: 0.6933334, y: 0.5}
+  m_AnchoredPosition: {x: -1.9999847, y: -7.999939}
+  m_SizeDelta: {x: 2, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &965391891
 MonoBehaviour:
@@ -15213,6 +15429,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 965391888}
   m_CullTransparentMesh: 1
+--- !u!225 &965391893
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965391888}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &971674011
 GameObject:
   m_ObjectHideFlags: 0
@@ -15447,6 +15675,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 644e145d9ca5404429ec4d9d2c0810a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xLimit: 960
+  yLimit: 540
+  xOffset: 150
+  yOffset: 150
   skillPrice: 0
   skillName: Dodge
   skillDescription: 
@@ -15661,7 +15893,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_AnchorMin.x
@@ -15669,15 +15901,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15709,11 +15941,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 180.49704
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -199.531
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -16194,7 +16426,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1050518438
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16958,10 +17190,10 @@ RectTransform:
   - {fileID: 1621311656}
   m_Father: {fileID: 594245183}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 215, y: -52.892952}
-  m_SizeDelta: {x: 350, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1113981926
 MonoBehaviour:
@@ -17321,10 +17553,10 @@ RectTransform:
   - {fileID: 940415340}
   m_Father: {fileID: 799291430}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 450, y: -50}
+  m_SizeDelta: {x: 300, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1129377761
 MonoBehaviour:
@@ -17528,7 +17760,7 @@ RectTransform:
   m_Father: {fileID: 1002995014}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -18600,6 +18832,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 644e145d9ca5404429ec4d9d2c0810a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xLimit: 960
+  yLimit: 540
+  xOffset: 150
+  yOffset: 150
   skillPrice: 0
   skillName: Multiple destruction
   skillDescription: 
@@ -19286,7 +19522,7 @@ RectTransform:
   m_Father: {fileID: 1155317080}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -19424,6 +19660,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 644e145d9ca5404429ec4d9d2c0810a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xLimit: 960
+  yLimit: 540
+  xOffset: 150
+  yOffset: 150
   skillPrice: 100
   skillName: Dash
   skillDescription: 
@@ -20342,6 +20582,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 644e145d9ca5404429ec4d9d2c0810a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xLimit: 960
+  yLimit: 540
+  xOffset: 150
+  yOffset: 150
   skillPrice: 0
   skillName: Restore with parry
   skillDescription: 
@@ -21376,7 +21620,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_AnchorMin.x
@@ -21384,15 +21628,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21424,11 +21668,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 400.49704
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -89.531006
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -21490,7 +21734,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -535, y: 287}
+  m_AnchoredPosition: {x: -535, y: 309}
   m_SizeDelta: {x: 380, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1409950531
@@ -22287,7 +22531,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_AnchorMin.x
@@ -22295,15 +22539,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -22335,11 +22579,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 290.49704
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -89.531006
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -22454,6 +22698,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 644e145d9ca5404429ec4d9d2c0810a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xLimit: 960
+  yLimit: 540
+  xOffset: 150
+  yOffset: 150
   skillPrice: 0
   skillName: Parry with mirage
   skillDescription: 
@@ -23641,7 +23889,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_AnchorMin.x
@@ -23649,15 +23897,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -23689,11 +23937,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 290.49704
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -199.531
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -23746,10 +23994,10 @@ RectTransform:
   - {fileID: 362661731}
   m_Father: {fileID: 799291430}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 750, y: -50}
+  m_SizeDelta: {x: 300, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1608937417
 MonoBehaviour:
@@ -23941,6 +24189,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 644e145d9ca5404429ec4d9d2c0810a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xLimit: 960
+  yLimit: 540
+  xOffset: 150
+  yOffset: 150
   skillPrice: 0
   skillName: Parry
   skillDescription: 
@@ -25557,7 +25809,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_AnchorMin.x
@@ -25565,15 +25817,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -25605,11 +25857,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 510.49704
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -199.531
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -25977,10 +26229,10 @@ RectTransform:
   - {fileID: 1937962029}
   m_Father: {fileID: 1528979323}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 215, y: -33.989998}
-  m_SizeDelta: {x: 350, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1760791601
 MonoBehaviour:
@@ -26263,7 +26515,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 1024
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -26291,7 +26543,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -4.894743, y: 0, z: -3.9902039, w: 0}
+  m_margin: {x: 11.000826, y: 0, z: 10.845688, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -26321,7 +26573,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -12}
   m_SizeDelta: {x: 0, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!224 &1772191302 stripped
@@ -27248,6 +27500,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 644e145d9ca5404429ec4d9d2c0810a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xLimit: 960
+  yLimit: 540
+  xOffset: 150
+  yOffset: 150
   skillPrice: 0
   skillName: Sword Throw
   skillDescription: Throws sword into the enemy
@@ -29078,10 +29334,10 @@ RectTransform:
   - {fileID: 2084347137}
   m_Father: {fileID: 618376740}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 215, y: -52.892952}
-  m_SizeDelta: {x: 350, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1861337947
 MonoBehaviour:
@@ -30151,10 +30407,10 @@ RectTransform:
   - {fileID: 1168938325}
   m_Father: {fileID: 618376740}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 605, y: -52.892952}
-  m_SizeDelta: {x: 350, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1954211523
 MonoBehaviour:
@@ -30304,10 +30560,10 @@ RectTransform:
   - {fileID: 517918348}
   m_Father: {fileID: 1528979323}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 215, y: -103.99}
-  m_SizeDelta: {x: 350, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1959650545
 MonoBehaviour:
@@ -30557,6 +30813,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 644e145d9ca5404429ec4d9d2c0810a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xLimit: 960
+  yLimit: 540
+  xOffset: 150
+  yOffset: 150
   skillPrice: 0
   skillName: Sword bounce
   skillDescription: 
@@ -30839,10 +31099,10 @@ RectTransform:
   - {fileID: 632157070}
   m_Father: {fileID: 799291430}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1050, y: -50}
+  m_SizeDelta: {x: 300, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1968035166
 MonoBehaviour:
@@ -31238,6 +31498,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 644e145d9ca5404429ec4d9d2c0810a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xLimit: 960
+  yLimit: 540
+  xOffset: 150
+  yOffset: 150
   skillPrice: 500
   skillName: Dash - "Here I am"
   skillDescription: 
@@ -31906,7 +32170,7 @@ RectTransform:
   m_Father: {fileID: 1184965151}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 1.4000015}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -32044,6 +32308,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 644e145d9ca5404429ec4d9d2c0810a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xLimit: 960
+  yLimit: 540
+  xOffset: 150
+  yOffset: 150
   skillPrice: 0
   skillName: Explosion
   skillDescription: 
@@ -32192,6 +32460,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 644e145d9ca5404429ec4d9d2c0810a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xLimit: 960
+  yLimit: 540
+  xOffset: 150
+  yOffset: 150
   skillPrice: 0
   skillName: Crystal
   skillDescription: 
@@ -32434,6 +32706,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 644e145d9ca5404429ec4d9d2c0810a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xLimit: 960
+  yLimit: 540
+  xOffset: 150
+  yOffset: 150
   skillPrice: 0
   skillName: Dodge mirage
   skillDescription: 
@@ -32844,6 +33120,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 644e145d9ca5404429ec4d9d2c0810a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xLimit: 960
+  yLimit: 540
+  xOffset: 150
+  yOffset: 150
   skillPrice: 0
   skillName: Controlled destruction
   skillDescription: 
@@ -33264,10 +33544,10 @@ RectTransform:
   - {fileID: 542442342}
   m_Father: {fileID: 618376740}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 215, y: -122.89295}
-  m_SizeDelta: {x: 350, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2116918850
 MonoBehaviour:
@@ -33548,6 +33828,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 644e145d9ca5404429ec4d9d2c0810a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xLimit: 960
+  yLimit: 540
+  xOffset: 150
+  yOffset: 150
   skillPrice: 0
   skillName: Aggresive mirage
   skillDescription: 
@@ -33696,7 +33980,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_AnchorMin.x
@@ -33704,15 +33988,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -33744,11 +34028,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 70.49704
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -89.531006
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3620493443184572716, guid: 8273e9bd917a856438f050ec1730083b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
