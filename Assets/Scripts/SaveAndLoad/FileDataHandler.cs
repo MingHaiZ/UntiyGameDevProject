@@ -9,9 +9,13 @@ public class FileDataHandler
     private string dataDirPath = "";
     private string dataFileName = "";
 
+    private bool encryptData = false;
+    private string codeWord = "MingHaiZ";
 
-    public FileDataHandler(string _dataDirPath, string _dataFileName)
+
+    public FileDataHandler(string _dataDirPath, string _dataFileName, bool _encryptData)
     {
+        encryptData = _encryptData;
         dataDirPath = _dataDirPath;
         dataFileName = _dataFileName;
     }
@@ -23,6 +27,11 @@ public class FileDataHandler
         {
             Directory.CreateDirectory(Path.GetDirectoryName(fullPath));
             string dataToStore = JsonUtility.ToJson(_data, true);
+
+            if (encryptData)
+            {
+                dataToStore = EncryptDecrypt(dataToStore);
+            }
 
             using (FileStream fs = new FileStream(fullPath, FileMode.Create))
             {
@@ -53,9 +62,13 @@ public class FileDataHandler
                         dataToLoad = sr.ReadToEnd();
                     }
                 }
-                
-                loadData = JsonUtility.FromJson<GameData>(dataToLoad);
 
+                if (encryptData)
+                {
+                    dataToLoad = EncryptDecrypt(dataToLoad);
+                }
+
+                loadData = JsonUtility.FromJson<GameData>(dataToLoad);
             } catch (Exception e)
             {
                 Debug.LogError("Error on reading data to file " + fullPath + "\n" + e);
@@ -63,5 +76,25 @@ public class FileDataHandler
         }
 
         return loadData;
+    }
+
+    public void Delete()
+    {
+        string fullpath = Path.Combine(dataDirPath, dataFileName);
+        if (File.Exists(fullpath))
+        {
+            File.Delete(fullpath);
+        }
+    }
+
+    private string EncryptDecrypt(string _data)
+    {
+        string modifiedData = "";
+        for (int i = 0; i < _data.Length; i++)
+        {
+            modifiedData += (char)(_data[i] ^ codeWord[i % codeWord.Length]);
+        }
+
+        return modifiedData;
     }
 }
