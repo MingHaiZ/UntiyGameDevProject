@@ -53,4 +53,12 @@ public class Dash_Skill : Skill
             SkillManager.instance.clone.CreateClone(player.transform, Vector2.zero);
         }
     }
+
+    protected override void CheckUnlock()
+    {
+        UnlockDash();
+        UnlockCloneDash();
+        UnlockCloneOnArrival();
+        
+    }
 }

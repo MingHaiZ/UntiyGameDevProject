@@ -156,4 +156,13 @@ public class Crystal_Skill : Skill
         coolDownTimer = multiStackCooldown;
         RefilCrystal();
     }
+
+    protected override void CheckUnlock()
+    {
+        UnlockCrystal();
+        UnlockCrystalMirage();
+        UnlockCrystalExplosion();
+        UnlockCrystalMovingToEnemy();
+        UnlockCrystalMultiStack();
+    }
 }

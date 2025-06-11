@@ -69,4 +69,8 @@ public class BlackHole_Skill : Skill
     }
 
     private void UnlockBlackHole() => blackHoleUnlocked = blackHoleUnlockButton.unlocked;
+    protected override void CheckUnlock()
+    {
+        UnlockBlackHole();
+    }
 }

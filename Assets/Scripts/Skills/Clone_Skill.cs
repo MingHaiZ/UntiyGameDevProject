@@ -110,4 +110,12 @@ public class Clone_Skill : Skill
         yield return new WaitForSeconds(.4f);
         CreateClone(_transform, _offset);
     }
+
+    protected override void CheckUnlock()
+    {
+        UnlockCloneAttack();
+        UnlockAggresiveClone();
+        UnlockMultiClone();
+        UnlockCrystalInstead();
+    }
 }

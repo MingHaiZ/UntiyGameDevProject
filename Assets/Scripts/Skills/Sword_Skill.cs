@@ -219,4 +219,14 @@ public class Sword_Skill : Skill
     }
 
     #endregion
+
+    protected override void CheckUnlock()
+    {
+        UnlockSword();
+        UnlockBounceSword();
+        UnlockSpinSword();
+        UnlockpierceSword();
+        UnlockTimeStop();
+        UnlockVulnerable();
+    }
 }
