@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Skill : MonoBehaviour
 {
-    [SerializeField] protected float coolDown;
+    public float coolDown;
     protected float coolDownTimer;
 
     protected Player player;
@@ -56,4 +56,6 @@ public class Skill : MonoBehaviour
 
         return closestEnemy;
     }
+
+    public bool IsCoolDown() => coolDownTimer > 0;
 }
