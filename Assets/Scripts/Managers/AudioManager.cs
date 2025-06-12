@@ -8,6 +8,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private float sfxMinimumDistance;
     [SerializeField] private AudioSource[] sfx;
     [SerializeField] private AudioSource[] bgm;
+    [SerializeField] private bool canPlaySFX;
 
     public bool playBGM;
     private int bgmIndex;
@@ -21,7 +22,8 @@ public class AudioManager : MonoBehaviour
         {
             instance = this;
         }
-        
+
+        Invoke(nameof(AllowSFX), 1f);
     }
 
     private void Update()
@@ -40,6 +42,11 @@ public class AudioManager : MonoBehaviour
 
     public void PlaySFX(int _sfxIndex, Transform _source)
     {
+        if (!canPlaySFX)
+        {
+            return;
+        }
+
         if (sfx[_sfxIndex].isPlaying)
         {
             return;
@@ -82,4 +89,6 @@ public class AudioManager : MonoBehaviour
             bgm[i].Stop();
         }
     }
+
+    private void AllowSFX() => canPlaySFX = true;
 }
