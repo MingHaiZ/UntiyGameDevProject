@@ -1,8 +1,9 @@
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class UI : MonoBehaviour
+public class UI : MonoBehaviour, ISaveManager
 {
     [Header("End Screen")]
     [SerializeField] private UI_FadesScreen fadesScreen;
@@ -23,6 +24,9 @@ public class UI : MonoBehaviour
     public UI_ItemTooltip itemTooltip;
     public UI_StatToolTip statTooltip;
     public UI_CraftWindow craftWindow;
+
+
+    [SerializeField] private UI_VolumeSlider[] volumeSettings;
 
     private void Awake()
     {
@@ -120,4 +124,27 @@ public class UI : MonoBehaviour
     }
 
     public void RestartGameButton() => GameManager.instance.RestartScene();
+
+    public void SaveData(ref GameData _data)
+    {
+        _data.volumeSettings.Clear();
+        foreach (UI_VolumeSlider item in volumeSettings)
+        {
+            _data.volumeSettings.Add(item.parametr, item.slider.value);
+        }
+    }
+
+    public void LoadData(GameData _data)
+    {
+        foreach (KeyValuePair<string, float> pair in _data.volumeSettings)
+        {
+            foreach (UI_VolumeSlider item in volumeSettings)
+            {
+                if (item.parametr == pair.Key)
+                {
+                    item.LoadSlider(pair.Value);
+                }
+            }
+        }
+    }
 }

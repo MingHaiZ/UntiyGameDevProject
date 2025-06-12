@@ -18,12 +18,14 @@ public class GameData
     public float lostCurrencyY;
     public int lostCurrencyAmount;
 
+    public SerializableDictionary<string, float> volumeSettings;
+
     public GameData()
     {
         this.lostCurrencyX = 0;
         this.lostCurrencyY = 0;
         this.lostCurrencyAmount = 0;
-        
+
         this.currency = 0;
         skillTree = new SerializableDictionary<string, bool>();
         inventory = new SerializableDictionary<string, int>();
@@ -31,5 +33,7 @@ public class GameData
 
         closestCheckpointId = string.Empty;
         checkpoints = new SerializableDictionary<string, bool>();
+        
+        volumeSettings = new SerializableDictionary<string, float>();
     }
 }
