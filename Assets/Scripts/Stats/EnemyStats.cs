@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class EnemyStats : CharacterStats
 {
     private Enemy enemy;
     private ItemDrop myDropSystem;
+    public Stat soulsDropAmount;
 
     [Header("Level details")]
     [SerializeField] private int level;
@@ -15,9 +17,11 @@ public class EnemyStats : CharacterStats
 
     protected override void Start()
     {
+        soulsDropAmount.SetDefaultValue(100);
         ApplyLevelModifiers();
 
         base.Start();
+        
         enemy = GetComponent<Enemy>();
         myDropSystem = GetComponent<ItemDrop>();
     }
@@ -41,6 +45,8 @@ public class EnemyStats : CharacterStats
         Modify(fireDamage);
         Modify(iceDamage);
         Modify(lightingDamage);
+
+        Modify(soulsDropAmount);
     }
 
     private void Modify(Stat _stat)
@@ -61,6 +67,8 @@ public class EnemyStats : CharacterStats
     {
         base.Die();
         enemy.Die();
+
+        PlayerManager.instance.currency += soulsDropAmount.GetValue();
         myDropSystem.GenerateDrop();
     }
 }
