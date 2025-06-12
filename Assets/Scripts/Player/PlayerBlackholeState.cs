@@ -25,10 +25,13 @@ public class PlayerBlackholeState : PlayerState
     public override void Update()
     {
         base.Update();
+
         if (stateTimer > 0)
         {
             rb.velocity = new Vector2(0, 15);
         }
+
+        AudioManager.instance.PlaySFX(9, null);
 
         if (stateTimer < 0)
         {

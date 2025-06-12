@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class PlayerMoveState : PlayerGroundedState
 {
     public PlayerMoveState(Player _player, PlayerStateMachine _stateMachine, string _animBoolName) : base(_player,
@@ -8,6 +10,8 @@ public class PlayerMoveState : PlayerGroundedState
     public override void Enter()
     {
         base.Enter();
+        
+        AudioManager.instance.PlaySFX(14,null);
     }
 
     public override void Update()
@@ -28,5 +32,6 @@ public class PlayerMoveState : PlayerGroundedState
     public override void Exit()
     {
         base.Exit();
+        AudioManager.instance.StopSFX(14);
     }
 }
