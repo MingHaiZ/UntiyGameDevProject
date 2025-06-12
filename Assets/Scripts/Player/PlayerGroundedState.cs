@@ -15,6 +15,10 @@ public class PlayerGroundedState : PlayerState
     public override void Update()
     {
         base.Update();
+        if (player.stateMachine.currentState == player.deadState)
+        {
+            return;
+        }
 
         if (Input.GetKeyDown(KeyCode.R) && player.Skill.blackhole.blackHoleUnlocked &&
             !player.Skill.blackhole.IsCoolDown())

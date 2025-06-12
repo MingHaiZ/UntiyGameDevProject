@@ -8,6 +8,7 @@ public class UI : MonoBehaviour
     [SerializeField] private UI_FadesScreen fadesScreen;
 
     [SerializeField] private GameObject endText;
+    [SerializeField] private GameObject restartButton;
 
     [Space]
     [SerializeField] private GameObject characterUI;
@@ -112,5 +113,9 @@ public class UI : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         endText.SetActive(true);
+        yield return new WaitForSeconds(1);
+        restartButton.SetActive(true);
     }
+
+    public void RestartGameButton() => GameManager.instance.RestartScene();
 }
