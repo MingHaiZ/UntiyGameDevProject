@@ -425,6 +425,10 @@ public class CharacterStats : MonoBehaviour
 
     public virtual void TakeDamage(int damage)
     {
+        if (currentHealth<=0)
+        {
+            return;
+        }
         DecreaseHealth(damage);
         GetComponent<Entity>().DamageImpact();
         fx.StartCoroutine("FlashFX");

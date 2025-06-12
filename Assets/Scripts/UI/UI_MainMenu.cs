@@ -8,6 +8,7 @@ public class UI_MainMenu : MonoBehaviour
 {
     [SerializeField] private string sceneName = "MainScene";
     [SerializeField] private GameObject continueButton;
+    [SerializeField] private UI_FadesScreen fadesScreen;
 
     private void Start()
     {
@@ -19,17 +20,25 @@ public class UI_MainMenu : MonoBehaviour
 
     public void ContinueGame()
     {
-        SceneManager.LoadScene(sceneName);
+        StartCoroutine(LoadSceneWithFadeEffect(1.5f));
+        
     }
 
     public void NewGame()
     {
         SaveManager.instance.DeleteSavedData();
-        SceneManager.LoadScene(sceneName);
+        StartCoroutine(LoadSceneWithFadeEffect(1.5f));
     }
 
     public void ExitGame()
     {
         Debug.Log("Exit Game");
+    }
+
+    IEnumerator LoadSceneWithFadeEffect(float _delay)
+    {
+        fadesScreen.FadeOut();
+        yield return new WaitForSeconds(_delay);
+        SceneManager.LoadScene(sceneName);
     }
 }

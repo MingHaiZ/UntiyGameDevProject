@@ -1,7 +1,15 @@
+using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public class UI : MonoBehaviour
 {
+    [Header("End Screen")]
+    [SerializeField] private UI_FadesScreen fadesScreen;
+
+    [SerializeField] private GameObject endText;
+
+    [Space]
     [SerializeField] private GameObject characterUI;
 
     [SerializeField] private GameObject skillTreeUI;
@@ -56,7 +64,11 @@ public class UI : MonoBehaviour
     {
         for (int i = 0; i < transform.childCount; i++)
         {
-            transform.GetChild(i).gameObject.SetActive(false);
+            bool isFadeScreen = transform.GetChild(i).GetComponent<UI_FadesScreen>() != null;
+            if (!isFadeScreen)
+            {
+                transform.GetChild(i).gameObject.SetActive(false);
+            }
         }
 
         if (_menu != null)
@@ -86,6 +98,19 @@ public class UI : MonoBehaviour
                 return;
             }
         }
+
         SwitchTo(inGameUI);
+    }
+
+    public void SwitchOnEndScreen()
+    {
+        fadesScreen.FadeOut();
+        StartCoroutine(EndScreenCorutine());
+    }
+
+    private IEnumerator EndScreenCorutine()
+    {
+        yield return new WaitForSeconds(1);
+        endText.SetActive(true);
     }
 }
