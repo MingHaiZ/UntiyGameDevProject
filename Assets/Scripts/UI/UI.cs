@@ -27,6 +27,7 @@ public class UI : MonoBehaviour
     private void Awake()
     {
         SwitchTo(skillTreeUI);
+        fadesScreen.gameObject.SetActive(true);
     }
 
     // Start is called before the first frame update

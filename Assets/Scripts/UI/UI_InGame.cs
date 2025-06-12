@@ -36,7 +36,7 @@ public class UI_InGame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentSouls.text = PlayerManager.instance.GetCurrency().ToString("#,#");
+        currentSouls.text = PlayerManager.instance.GetCurrency().ToString("N0");
 
         if (Input.GetKeyDown(KeyCode.LeftShift) && skills.dash.dashUnlocked)
         {
